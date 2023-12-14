@@ -18,14 +18,14 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-	modules = [ ./configuration.nix ];
+	modules = [ ./NixOS/configuration.nix ];
       };
     };
 
     homeConfigurations = {
       knosence = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	modules = [ ./home.nix ];
+	modules = [ ./Home/home.nix ];
       };
     };
   };
