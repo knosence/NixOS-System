@@ -15,6 +15,11 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  imports = [
+    ./../../User/App/kitty/kitty.nix
+
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
@@ -38,6 +43,8 @@
     lazygit
     fd
     ripgrep
+    nerdfonts
+    kitty
 
     # Developement
     # zig # For C compiler
