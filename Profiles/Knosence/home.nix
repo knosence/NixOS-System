@@ -36,6 +36,17 @@
     obsidian
     zellij
     lazygit
+    fd
+    ripgrep
+
+    # Developement
+    # zig # For C compiler
+    clang_17
+    nodejs_21
+    nodePackages_latest.nodejs
+    nil
+
+    
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -63,7 +74,9 @@
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    # '';"
+    ".config/nvim/lua".source = ./../../User/App/nvim/lua;
+    ".config/nvim/init.lua".source = ./../../User/App/nvim/init.lua;
   };
 
   # Home Manager can also manage your environment variables through
@@ -84,11 +97,18 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-    programs.zsh = {
-      enable = true;
-      shellAliases = {
-        ls = "ls -l";
-        ".." = "cd ..";
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ls = "ls -l";
+      ".." = "cd ..";
     };
   };
+  programs.neovim = {
+    plugins = [
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammers
+    ];
+  };
+
+
 }

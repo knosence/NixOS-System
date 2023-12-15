@@ -25,7 +25,7 @@
     homeConfigurations = {
       knosence = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	modules = [ ./Profiles/Knosence/knosence.nix ];
+	modules = [ ./Profiles/Knosence/home.nix ];
       };
     };
   };

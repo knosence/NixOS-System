@@ -1,7 +1,7 @@
-vim.cmd("expandtab")
-vim.cmd("tabstop=2")
-vim.cmd("softtabstop=2")
-vim.cmd("shiftwidth=2 ")
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2 ")
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -40,27 +40,11 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
-local config = require("nvim-treesitter.configs")
-config.setup({
+local configs = require("nvim-treesitter.configs")
+configs.setup({
 	ensure_installed = {
-		"lua",
-		"elixir",
-		"javascript",
-		"typescript",
-		"bash",
-		"html",
-		"css",
-		"dockerfile",
-		"java",
-		"json",
-		"jsdoc",
-		"markdown",
-		"markdown_inlines",
-		"prisma",
-		"sql",
-		"toml",
-		"tsx",
-		"yuck",
+    typescript,
+    tsx,
 	},
 	highlight = { enable = true },
 	indent = { enable = true },
