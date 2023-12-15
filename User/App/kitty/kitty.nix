@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
 {
+# TODO getting default config
   programs.kitty = {
     enable = true;
     font = {
       package = pkgs.nerdfonts;
-      name = "SauceCodePro Nerd Font Mono";
+      name = "Mononoki Nerd Font Mono";
     };
     settings = {
       bold_font = "auto";
