@@ -45,6 +45,8 @@
     nodejs_21
     nodePackages_latest.nodejs
     nil
+    tree-sitter
+    vscode-extensions.sumneko.lua
 
     
 
@@ -106,7 +108,7 @@
   };
   programs.neovim = {
     plugins = [
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammers
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
     ];
   };
 
