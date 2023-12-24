@@ -53,6 +53,7 @@
     nodePackages_latest.nodejs
     nil
     lua
+    luaformatter
     tree-sitter
     vscode-extensions.sumneko.lua
 
