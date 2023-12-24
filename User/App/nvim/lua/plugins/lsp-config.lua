@@ -19,7 +19,7 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({
     })
-      vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, {})
+      vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, {})
     end 
   }
 }
