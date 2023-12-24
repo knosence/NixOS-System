@@ -54,10 +54,13 @@
     clang_17
     nodejs_21
     nodePackages_latest.nodejs
-    nil
-    lua-language-server
-    luaformatter
     tree-sitter
+    # Rust
+    rustc
+    cargo
+    rustfmt
+    rust-analyzer
+    clippy
 
     
 
