@@ -46,16 +46,18 @@
     nerdfonts
     kitty
 
+    # Utils
+    unzip
+
     # Developement
     # zig # For C compiler
     clang_17
     nodejs_21
     nodePackages_latest.nodejs
     nil
-    lua
+    lua-language-server
     luaformatter
     tree-sitter
-    vscode-extensions.sumneko.lua
 
     
 
