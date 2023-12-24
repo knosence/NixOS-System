@@ -52,6 +52,7 @@
     nodejs_21
     nodePackages_latest.nodejs
     nil
+    lua
     tree-sitter
     vscode-extensions.sumneko.lua
 
