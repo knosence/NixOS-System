@@ -1,11 +1,11 @@
 -- Lualine
 require("lualine").setup({
     icons_enabled = true,
-    theme = 'onedark',
+    theme = 'catppuccin',
 })
 
 -- Colorscheme
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme catppuccin")
 
 -- Comment
 require("Comment").setup()

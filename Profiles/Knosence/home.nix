@@ -1,4 +1,4 @@
-{ config, pkgs, outputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -68,7 +68,7 @@
     rust-analyzer
     clippy
 
-    
+
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -130,114 +130,111 @@
     };
   };
 
- nixpkgs = {
-    overlays = [
-      (final: prev: {
-        vimPlugins = prev.vimPlugins // {
-          own-onedark-nvim = prev.vimUtils.buildVimPlugin {
-            name = "onedark";
-            src = inputs.plugin-onedark;
-          };
-        };
-      })
-    ];
-  };
+  programs.neovim =
+    let
+      toLua = str: "lua << EOF\n${str}\nEOF\n";
+      toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+    in
+    {
+      enable = true;
 
-  programs.neovim = 
-  let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-  in
-  {
-    enable = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
 
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
+      extraPackages = with pkgs; [
+        lua-language-server
+        rnix-lsp
 
-    extraPackages = with pkgs; [
-      lua-language-server
-      rnix-lsp
+        xclip
+        wl-clipboard
+      ];
 
-      xclip
-      wl-clipboard
-    ];
+      plugins = with pkgs.vimPlugins; [
 
-    plugins = with pkgs.vimPlugins; [
+        {
+          plugin = nvim-lspconfig;
+          config = toLuaFile ../../User/Editors/nvim/plugin/lsp.lua;
+        }
 
-      {
-        plugin = nvim-lspconfig;
-        config = toLuaFile ./nvim/plugin/lsp.lua;
-      }
+        {
+          plugin = comment-nvim;
+          config = toLua "require(\"Comment\").setup()";
+        }
 
-      {
-        plugin = comment-nvim;
-        config = toLua "require(\"Comment\").setup()";
-      }
+        {
+          plugin = catppuccin-nvim;
+          config = "colorscheme catppuccin";
+        }
 
-      {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
-      }
+        neodev-nvim
 
-      neodev-nvim
+        nvim-cmp
 
-      nvim-cmp 
-      {
-        plugin = nvim-cmp;
-        config = toLuaFile ./nvim/plugin/cmp.lua;
-      }
+        {
+          plugin = nvim-cmp;
+          config = toLuaFile ../../User/Editors/nvim/plugin/cmp.lua;
+        }
 
-      {
-        plugin = telescope-nvim;
-        config = toLuaFile ./nvim/plugin/telescope.lua;
-      }
+        {
+          plugin = telescope-nvim;
+          config = toLuaFile ../../User/Editors/nvim/plugin/telescope.lua;
+        }
 
-      telescope-fzf-native-nvim
+        {
+          plugin = neo-tree-nvim;
+          config = toLua ":Neotree toggle right<CR>";
+        }
 
-      cmp_luasnip
-      cmp-nvim-lsp
+        telescope-fzf-native-nvim
 
-      luasnip
-      friendly-snippets
+        cmp_luasnip
+        cmp-nvim-lsp
 
+        { }
 
-      lualine-nvim
-      nvim-web-devicons
+        luasnip
+        friendly-snippets
 
-      {
-        plugin = (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-          p.tree-sitter-vim
-          p.tree-sitter-bash
-          p.tree-sitter-lua
-          p.tree-sitter-python
-          p.tree-sitter-json
-        ]));
-        config = toLuaFile ./nvim/plugin/treesitter.lua;
-      }
+        {
+          plugin = lualine-nvim;
+          config = toLuaFile ../../User/Editors/nvim/plugin/lualine.lua;
+        }
+        nvim-web-devicons
 
-      vim-nix
+        {
+          plugin = (nvim-treesitter.withPlugins (p: [
+            p.tree-sitter-nix
+            p.tree-sitter-vim
+            p.tree-sitter-bash
+            p.tree-sitter-lua
+            p.tree-sitter-python
+            p.tree-sitter-json
+          ]));
+          config = toLuaFile ../../User/Editors/nvim/plugin/treesitter.lua;
+        }
 
-      # {
-      #   plugin = vimPlugins.own-onedark-nvim;
-      #   config = "colorscheme onedark";
-      # }
-    ];
+        vim-nix
 
-    extraLuaConfig = ''
-      ${builtins.readFile ./nvim/options.lua}
-    '';
+        # {
+        #   plugin = vimPlugins.own-onedark-nvim;
+        #   config = "colorscheme onedark";
+        # }
+      ];
 
-    # extraLuaConfig = ''
-    #   ${builtins.readFile ./nvim/options.lua}
-    #   ${builtins.readFile ./nvim/plugin/lsp.lua}
-    #   ${builtins.readFile ./nvim/plugin/cmp.lua}
-    #   ${builtins.readFile ./nvim/plugin/telescope.lua}
-    #   ${builtins.readFile ./nvim/plugin/treesitter.lua}
-    #   ${builtins.readFile ./nvim/plugin/other.lua}
-    # '';
-  };
+      extraLuaConfig = ''
+        ${builtins.readFile ../../User/Editors/nvim/options.lua}
+      '';
+
+      # extraLuaConfig = ''
+      #   ${builtins.readFile ./nvim/options.lua}
+      #   ${builtins.readFile ./nvim/plugin/lsp.lua}
+      #   ${builtins.readFile ./nvim/plugin/cmp.lua}
+      #   ${builtins.readFile ./nvim/plugin/telescope.lua}
+      #   ${builtins.readFile ./nvim/plugin/treesitter.lua}
+      #   ${builtins.readFile ./nvim/plugin/other.lua}
+      # '';
+    };
 
 
 }
