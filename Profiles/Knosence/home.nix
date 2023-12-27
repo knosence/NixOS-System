@@ -97,8 +97,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';"
-    ".config/nvim/lua".source = ./../../User/App/Editors/nvim/lua;
-    ".config/nvim/init.lua".source = ./../../User/App/Editors/nvim/init.lua;
+    ".config/nvim/lua".source = ./../../User/Editors/nvim/lua;
+    ".config/nvim/init.lua".source = ./../../User/Editors/nvim/init.lua;
   };
 
   # Home Manager can also manage your environment variables through
