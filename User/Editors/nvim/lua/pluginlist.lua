@@ -46,6 +46,19 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
+    'nvim-telescope/telescope-ui-select.nvim',
+    config = function()
+      require("telescope").setup({
+        extentions = {
+          ["ui-select"]= {
+            require("telescope.themes").get_dropdown {}
+          }
+        }
+      })
+      require('telescope').load_extension('ui-select')
+    end
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
   },
