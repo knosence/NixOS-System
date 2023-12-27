@@ -5,12 +5,16 @@
 { config, pkgs, ... }:
 
 {
+#----==={ Imports Section }===----
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
+
+#----==={ Bootloader Section }===----
+
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
  
@@ -22,6 +26,9 @@
     }; 
   }; 
 
+
+#----==={ Network Section }===----
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -31,6 +38,13 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  
+  hardware.bluetooth = {
+    enable = true; 
+    powerOnBoot = true;
+  };
+
+#----==={ Locale Section }===----
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -50,6 +64,8 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+#----==={ Services }===----
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -57,6 +73,8 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
+  services.blueman.enable = true;
+  
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -68,7 +86,9 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio = {
+    enable = false;
+  };
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -84,7 +104,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.knosence = {
@@ -109,6 +129,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    zellij
     wget
     git
   ];

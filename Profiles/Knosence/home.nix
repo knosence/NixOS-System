@@ -55,6 +55,12 @@
     nodejs_21
     nodePackages_latest.nodejs
     tree-sitter
+    nil
+    lua
+    lua-language-server
+    lua52Packages.luarocks-nix
+
+
     # Rust
     rustc
     cargo
@@ -91,8 +97,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';"
-    ".config/nvim/lua".source = ./../../User/App/nvim/lua;
-    ".config/nvim/init.lua".source = ./../../User/App/nvim/init.lua;
+    ".config/nvim/lua".source = ./../../User/App/Editors/nvim/lua;
+    ".config/nvim/init.lua".source = ./../../User/App/Editors/nvim/init.lua;
   };
 
   # Home Manager can also manage your environment variables through
@@ -121,9 +127,56 @@
     };
   };
   programs.neovim = {
-    plugins = [
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-    ];
+    enable = true;
+#   plugins = with pkgs; [
+#     # languages
+#     vimPlugins.lsp-zero-nvim
+#     vimPlugins.nivm-lspconfig
+#     vimPlugins.rust-tools-nvim
+#     vimPlugins.vim-nix
+#     vimPlugins.vim-prisma
+
+#     # Trrsitter
+#     vimPlugins.nvim-treesitter.withAllGrammars
+
+#     # completion
+#     vimPlugins.cmp-buffer
+#     vimPlugins.cmp-nvim-lsp
+#     vimPlugins.cmp-path
+#     vimPlugins.cmp-treesitter
+#     vimPlugins.cmp_luasnip
+#     vimPlugins.copilot-cmp
+#     vimPlugins.copilot-lua
+#     vimPlugins.friendly-snippets
+#     vimPlugins.lspkind-nvim
+#     vimPlugins.luasnip
+#     vimPlugins.nvim-cmp
+
+#     # Telescope
+#     vimPlugins.plenary-nvim
+#     vimPlugins.popup-nvim
+#     vimPlugins.telescope-nvim
+#     vimPlugins.telescope-manix
+
+#     # Theme
+#     vimPlugins.catppuccin-nvim
+
+#     # extras
+#     vimPlugins.gitsigns-nvim
+#     vimPlugins.lualine-nvim
+#     vimPlugins.nerdcommenter
+#     vimPlugins.nvim-coloriser-lua
+#     vimPlugins.nvim-treesitter-context
+#     vimPlugins.nvim-ts-rainbow
+#     vimPlugins.nvim-web-devicons
+
+#     # Misc
+#     pkgs.vimPlugins.which-key-nvim
+
+#     # Configuration
+#     #inputs.self.packages.${pkgs.system}.knosence-nvim    
+
+#     ];
   };
 
 
