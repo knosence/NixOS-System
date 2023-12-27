@@ -119,64 +119,101 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
   programs.zsh = {
     enable = true;
     shellAliases = {
-      ls = "ls -l";
+      ll = "ls -l";
+      la = "ls -a";
       ".." = "cd ..";
+
     };
   };
-  programs.neovim = {
+
+  programs.neovim = 
+  let 
+    toLua = str: "lua << EOF\n${str}\nEOF\n";
+    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+  in
+  {
     enable = true;
-#   plugins = with pkgs; [
-#     # languages
-#     vimPlugins.lsp-zero-nvim
-#     vimPlugins.nivm-lspconfig
-#     vimPlugins.rust-tools-nvim
-#     vimPlugins.vim-nix
-#     vimPlugins.vim-prisma
 
-#     # Trrsitter
-#     vimPlugins.nvim-treesitter.withAllGrammars
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
 
-#     # completion
-#     vimPlugins.cmp-buffer
-#     vimPlugins.cmp-nvim-lsp
-#     vimPlugins.cmp-path
-#     vimPlugins.cmp-treesitter
-#     vimPlugins.cmp_luasnip
-#     vimPlugins.copilot-cmp
-#     vimPlugins.copilot-lua
-#     vimPlugins.friendly-snippets
-#     vimPlugins.lspkind-nvim
-#     vimPlugins.luasnip
-#     vimPlugins.nvim-cmp
+    extraPackages = with pkgs; [
+      xclip
+      wl-clipboard
 
-#     # Telescope
-#     vimPlugins.plenary-nvim
-#     vimPlugins.popup-nvim
-#     vimPlugins.telescope-nvim
-#     vimPlugins.telescope-manix
+      lua-language-server
+      rnix-lsp
+    ];
 
-#     # Theme
-#     vimPlugins.catppuccin-nvim
+    plugins = with pkgs.vimPlugins; [
+      {
+        plugin = comment-nvim;
+        config = toLua "require(\"Comment\").setup()";
+      }
 
-#     # extras
-#     vimPlugins.gitsigns-nvim
-#     vimPlugins.lualine-nvim
-#     vimPlugins.nerdcommenter
-#     vimPlugins.nvim-coloriser-lua
-#     vimPlugins.nvim-treesitter-context
-#     vimPlugins.nvim-ts-rainbow
-#     vimPlugins.nvim-web-devicons
+      {
+        plugin = nvim-lspconfig;
+        config = toLuaFile ./nvim/plugins/lsp.lua;
+      }
 
-#     # Misc
-#     pkgs.vimPlugins.which-key-nvim
+      {
+        plugin = catppuccin-nvim;
+        config = "colorscheme catppuccin";
+      }
+      neodev-nvim
+      nvim-cmp
+      {
+        plugin = nvim-cmp;
+        config = toLuaFile ./nvim/plugins/cmp.lua;
+      }
 
-#     # Configuration
-#     #inputs.self.packages.${pkgs.system}.knosence-nvim    
+      {
+        plugin = telescope-nvim;
+        config = toLuaFile ./nvim/plugins/telescope.lua;
+      }
 
-#     ];
+      telescope-fzf-native-nvim
+
+      cmp_luasnip
+      cmp-nvim-lsp
+
+      luasnip
+      friendly-snippets
+
+      lualine-nvim
+      nvim-web-devicons
+      
+      neo-tree-nvim
+      {
+        plugin = neo-tree-nvim;
+        config = toLua ./nvim/plugins/neo-tree.lua;
+      }
+      
+      {
+        plugin = (nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-astro
+          p.tree-sitter-vim
+          p.tree-sitter-bash
+          p.tree-sitter-lua
+          p.tree-sitter-python
+          p.tree-sitter-json
+        ]));
+        config = toLuaFile ./nvim/plugins/treesitter.lua;
+      }
+
+      vim-nix
+    ];
+
+    extraLuaConfig = ''
+      ${builtins.readFile ./nvim/options.lua}
+    '';
+    
   };
 
 
