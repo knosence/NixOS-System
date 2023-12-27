@@ -3,13 +3,17 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable"; 
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };  
 
+    plugin-onedark.url = "github:navarasu/onedark.nvim";
+    plugin-nixpkgs.follows = "nixpkgs";
 
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}:
+  outputs = {self, nixpkgs, home-manager, ...}@inputs:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -26,6 +30,7 @@
       knosence = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 	modules = [ ./Profiles/Knosence/home.nix ];
+        extraSpecialArgs = {inherit inputs;};
       };
     };
   };
