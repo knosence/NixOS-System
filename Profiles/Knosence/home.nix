@@ -48,6 +48,8 @@
 
     # Utils
     unzip
+    tree
+    lf
 
     # Developement
     # zig # For C compiler
@@ -183,15 +185,13 @@
 
         {
           plugin = neo-tree-nvim;
-          config = toLua ":Neotree toggle right<CR>";
+          config = toLuaFile ../../User/Editors/nvim/plugin/neo-tree.lua;
         }
 
         telescope-fzf-native-nvim
 
         cmp_luasnip
         cmp-nvim-lsp
-
-        { }
 
         luasnip
         friendly-snippets
