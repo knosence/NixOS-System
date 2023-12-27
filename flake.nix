@@ -1,5 +1,5 @@
 {
-  description = "My first flake!";
+  description = "The flake to rule my world";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable"; 
@@ -9,7 +9,7 @@
     };  
 
     plugin-onedark.url = "github:navarasu/onedark.nvim";
-    plugin-nixpkgs.follows = "nixpkgs";
+    plugin-onedark.flake = false;
 
   };
 
