@@ -24,6 +24,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
+  xdg.configFile.nvim.source = ../../User/Editors/nvim;
+  
   nixpkgs.config = {
 
     allowUnfree = true;
@@ -130,7 +132,7 @@
       la = "ls -a";
       ".." = "cd ..";
     };
-
+  };
     programs.neovim = {
       enable = true;
 
@@ -138,10 +140,8 @@
       vimAlias = true;
       vimdiffAlias = true;
 
-      xdg.configFile.nvim.source = ../../User/Editors/nvim;
 
-    }
-  };
+    };
 
 
 
