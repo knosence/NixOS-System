@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, nixpkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -17,6 +17,7 @@
 
   imports = [
     ./../../User/App/kitty/kitty.nix
+    
 
   ];
 
@@ -128,113 +129,21 @@
       ll = "ls -l";
       la = "ls -a";
       ".." = "cd ..";
-
     };
-  };
 
-  programs.neovim =
-    let
-      toLua = str: "lua << EOF\n${str}\nEOF\n";
-      toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-    in
-    {
+    programs.neovim = {
       enable = true;
 
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
 
-      extraPackages = with pkgs; [
-        lua-language-server
-        rnix-lsp
+      xdg.configFile.nvim.source = ../../User/Editors/nvim;
 
-        xclip
-        wl-clipboard
-      ];
-
-      plugins = with pkgs.vimPlugins; [
-
-        {
-          plugin = nvim-lspconfig;
-          config = toLuaFile ../../User/Editors/nvim/plugin/lsp.lua;
-        }
-
-        {
-          plugin = comment-nvim;
-          config = toLua "require(\"Comment\").setup()";
-        }
-
-        {
-          plugin = catppuccin-nvim;
-          config = "colorscheme catppuccin";
-        }
-
-        neodev-nvim
-
-        nvim-cmp
-
-        {
-          plugin = nvim-cmp;
-          config = toLuaFile ../../User/Editors/nvim/plugin/cmp.lua;
-        }
-
-        {
-          plugin = telescope-nvim;
-          config = toLuaFile ../../User/Editors/nvim/plugin/telescope.lua;
-        }
-
-        {
-          plugin = neo-tree-nvim;
-          config = toLuaFile ../../User/Editors/nvim/plugin/neo-tree.lua;
-        }
-
-        telescope-fzf-native-nvim
-
-        cmp_luasnip
-        cmp-nvim-lsp
-
-        luasnip
-        friendly-snippets
-
-        {
-          plugin = lualine-nvim;
-          config = toLuaFile ../../User/Editors/nvim/plugin/lualine.lua;
-        }
-        nvim-web-devicons
-
-        {
-          plugin = (nvim-treesitter.withPlugins (p: [
-            p.tree-sitter-nix
-            p.tree-sitter-vim
-            p.tree-sitter-bash
-            p.tree-sitter-lua
-            p.tree-sitter-python
-            p.tree-sitter-json
-          ]));
-          config = toLuaFile ../../User/Editors/nvim/plugin/treesitter.lua;
-        }
-
-        vim-nix
-
-        # {
-        #   plugin = vimPlugins.own-onedark-nvim;
-        #   config = "colorscheme onedark";
-        # }
-      ];
-
-      extraLuaConfig = ''
-        ${builtins.readFile ../../User/Editors/nvim/options.lua}
-      '';
-
-      # extraLuaConfig = ''
-      #   ${builtins.readFile ./nvim/options.lua}
-      #   ${builtins.readFile ./nvim/plugin/lsp.lua}
-      #   ${builtins.readFile ./nvim/plugin/cmp.lua}
-      #   ${builtins.readFile ./nvim/plugin/telescope.lua}
-      #   ${builtins.readFile ./nvim/plugin/treesitter.lua}
-      #   ${builtins.readFile ./nvim/plugin/other.lua}
-      # '';
-    };
+    }
+  };
 
 
+
+   
 }
