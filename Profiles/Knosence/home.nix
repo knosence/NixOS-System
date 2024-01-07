@@ -131,6 +131,7 @@
       ll = "ls -l";
       la = "ls -a";
       ".." = "cd ..";
+      hm. = "home-manager switch --flake ."
     };
   };
     programs.neovim = {
@@ -139,7 +140,9 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-
+      enviroment.systemPackages = with pkgs; [
+        
+      ];
 
     };
 
