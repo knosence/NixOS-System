@@ -53,6 +53,9 @@
     unzip
     tree
     lf
+    xclip
+    wl-clipboard
+
 
     # Developement
     # zig # For C compiler
@@ -143,7 +146,4 @@
 
     };
 
-
-
-   
 }
