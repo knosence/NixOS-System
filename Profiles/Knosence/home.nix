@@ -1,9 +1,8 @@
 { config, pkgs, nixpkgs, ... }:
-let
+let 
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
-    rev = "46ca452d0b82a5f920ac334884e34532598901e2";
-    
+    sha256 = pkgs.lib.fakeHash;
   });
 in
 {
@@ -26,7 +25,7 @@ in
     ./../../User/App/kitty/kitty.nix
     #./../../User/Editors/nixvim.nix 
 
-    nixvim.homeManagerModules.nixvim
+    nixvim.homeManagerModules.nixvim 
   ];
 
   programs.nixvim = {
