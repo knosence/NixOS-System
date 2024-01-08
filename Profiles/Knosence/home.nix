@@ -1,8 +1,9 @@
 { config, pkgs, nixpkgs, ... }:
 let 
   nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-    sha256 = pkgs.lib.fakeHash;
+    url = "github:nix-community/nixvim";
+    # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+    ref = "23.11";
   });
 in
 {
@@ -23,15 +24,13 @@ in
   imports = [
 
     ./../../User/App/kitty/kitty.nix
-    #./../../User/Editors/nixvim.nix 
+    #./../../User/Editors/nixvim.nix
 
-    nixvim.homeManagerModules.nixvim 
+    nixvim.homeManagerModules.nixvim
   ];
 
-  programs.nixvim = {
-    enable = true;
-  };
-  
+  programs.nixvim.enable = true;
+    
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
