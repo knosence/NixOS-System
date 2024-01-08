@@ -1,5 +1,9 @@
 { config, pkgs, nixpkgs, ... }:
-
+let
+  nixvim = import (builtins.fetchGit {
+    url = "https://github.com/nix-community/nixvim";
+  });
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -16,8 +20,10 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
+    nixvim.homeManagerModules.nixvim
+
     ./../../User/App/kitty/kitty.nix
-    ./../../User/Editor/nixvim.nix 
+    ./../../User/Editors/nixvim.nix 
 
   ];
 
