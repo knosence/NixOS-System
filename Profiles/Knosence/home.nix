@@ -1,12 +1,4 @@
-{ config, pkgs, nixpkgs, ... }:
-
-let 
-  nixvim = import (builtins.fetchGit {
-    url = "github:nix-community/nixvim";
-    # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-    #ref = "23.11";
-  });
-in
+{ config, pkgs, nixpkgs, inputs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -23,19 +15,18 @@ in
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
 
     ./../../User/App/kitty/kitty.nix
-    #./../../User/Editors/nixvim.nix
+    ./../../User/Editors/nixvim.nix
 
-    nixvim.homeManagerModules.nixvim
   ];
 
-  programs.nixvim.enable = true;
     
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
-  xdg.configFile.nvim.source = ../../User/Editors/nvim;
+  # xdg.configFile.nvim.source = ../../User/Editors/nvim;
   
   nixpkgs.config = {
 
@@ -146,13 +137,5 @@ in
       "hm." = "home-manager switch --flake .";
     };
   };
-    programs.neovim = {
-      enable = true;
-
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
-
-    };
 
 }
