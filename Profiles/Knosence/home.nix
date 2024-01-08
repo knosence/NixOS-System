@@ -2,6 +2,8 @@
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
+    rev = "46ca452d0b82a5f920ac334884e34532598901e2";
+    
   });
 in
 {
@@ -20,13 +22,17 @@ in
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
-    nixvim.homeManagerModules.nixvim
 
     ./../../User/App/kitty/kitty.nix
-    ./../../User/Editors/nixvim.nix 
+    #./../../User/Editors/nixvim.nix 
 
+    nixvim.homeManagerModules.nixvim
   ];
 
+  programs.nixvim = {
+    enable = true;
+  };
+  
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
