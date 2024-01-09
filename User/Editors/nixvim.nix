@@ -4,14 +4,37 @@
     
     # Keymaps
     keymaps = [
+
+      ## Neotree Keymaps
       {
         action = "<cmd>Neotree toggle right<CR>";
 	key = "<leader>e";
       }
+
+      ## Telescope Keymaps
       {
         action = "<cmd>Telescope find_files<CR>";
 	key = "<leader>ff";
       }
+
+      ## LSP Keymaps
+      {
+        action = "<cmd>lua vim.lsp.buf.hover()<CR>";
+	key = "K";
+      }
+      {
+        action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+	key = "<leader>gd";
+      }
+      {
+        action = "<cmd>lua vim.lsp.buf.references()<CR>";
+	key = "<leader>gr";
+      }
+      {
+        action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+	key = "<leader>ca";
+      }
+      
     ];
 
     # Clopboards
@@ -36,6 +59,9 @@
     
     # Plugins
     plugins = { 
+      
+      ## Whichkey
+      which-key.enable = true;
       
       ## luaSnips
       luasnip.enable = true;
@@ -90,6 +116,7 @@
 	    settings.telemetry.enable = false;
 	  };
 
+          #### Rust
 	  rust-analyzer = {
 	    enable = true;
 	    installCargo = true;
