@@ -58,7 +58,6 @@
       ## Neo-tree
       neo-tree = {
 	enable = true;
-        # TODO keymap to leader e: toggle right
       };
 
       ## Treesitter
@@ -90,7 +89,13 @@
 	    enable = true;
 	    settings.telemetry.enable = false;
 	  };
-	  
+
+	  rust-analyzer = {
+	    enable = true;
+	    installCargo = true;
+	    installRustc = true;
+	  };
+
 	  #### Nix
 	  nil_ls = {
 	    enable = true;

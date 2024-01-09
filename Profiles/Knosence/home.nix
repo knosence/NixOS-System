@@ -51,6 +51,7 @@
     nerdfonts
     kitty
 
+
     # Utils
     unzip
     tree
