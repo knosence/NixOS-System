@@ -134,7 +134,8 @@
       ll = "ls -l";
       la = "ls -a";
       ".." = "cd ..";
-      "hm." = "home-manager switch --flake .";
+      "hm." = "cd ~/.system && home-manager switch --flake .";
+      update = "cd ~/.system && nix flake update";
     };
   };
 
