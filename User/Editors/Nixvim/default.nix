@@ -17,6 +17,7 @@
     ./_options.nix
     ./_telescope.nix
     ./_toggleterm.nix
+    ./_treesitter.nix
   ];
 
   programs.nixvim = {
