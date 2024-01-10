@@ -6,7 +6,7 @@
     ./_cmp.nix
     ./_git.nix
     ./_indent-blankline.nix
-    ./_ionide.nix 
+    ./_vimPlugins.nix 
     #./_lightline.nix
     ./_lsp.nix
     ./_lualine.nix
