@@ -3,7 +3,7 @@
 {
 
   imports = [
-    
+    ./_auto-pairs.nix   
   ];
 
   programs.nixvim = {
@@ -11,6 +11,8 @@
     vimAlias = true;
     viAlias = true;
     
+    # Colorscheme
+    colorschemes.catppuccin.enable = true;
 
     # Keymaps
     keymaps = [
@@ -48,33 +50,7 @@
     # Globals
     globals.mapleader = " ";
     
-    # Options
-    options = {
-      number = true;
-      relativenumber = true;
-
-      shiftwidth = 2;
-      autoindent = true;
-      smartindent = true;
-      tabstop = 2;
-      expandtab = true;
-      
-      termguicolors = true;
-      cursorline = true;
-
-      mouse = "a";
-
-      smartcase = true;
-      ttimeoutlen = 5;
-      compatible = false;
-      autoread = true;
-      incsearch = true;
-      hidden = true;
-      shortmess = "atI";
-    };
-    
-    # Colorscheme
-    colorschemes.catppuccin.enable = true;
+        
     
     # Plugins
     plugins = { 
@@ -109,8 +85,6 @@
       treesitter.enable = true;
       
       ts-autotag.enable = true;
-
-      nvim-autopairs.enable = true;
 
       ## BufferLine
       bufferline.enable = true;
