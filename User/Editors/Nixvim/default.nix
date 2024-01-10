@@ -12,6 +12,8 @@
     ./_ionide.nix 
     ./_lightline.nix
     # ./_lualine.nix
+    ./_none-ls.nix
+    ./_nvim-tree.nix
   ];
 
   programs.nixvim = {
@@ -84,9 +86,6 @@
       ## Gitgutter
       gitgutter.enable = true;
 
-      ## none-ls
-      none-ls.enable = true;
-
       ## Neo-tree
       neo-tree = {
         enable = true;
@@ -101,68 +100,6 @@
     
       nvim-colorizer.enable = true;
 
-      ## Lsp Format
-      lsp-format = {
-        enable = true;
-        lspServersToEnable = "all";
-      };
-
-      ## Plagign>>LSP
-      lsp = {
-        enable = true;
-
-        keymaps = {
-          lspBuf = {
-            K = "hover";
-            gD = "references";
-            gd = "definition";
-            gi = "implementation";
-            gt = "type_definition";
-          };
-          diagnostic = {
-            "<leader>j" = "goto_next";
-            "<leader>k" = "goto_prev";
-          };
-        };
-
-        ### Servers
-        servers = {
-          #### JavaScript, TypeScript
-          tsserver.enable = true;
-	    
-          #### Lua
-          lua-ls = {
-            enable = true;
-            settings.telemetry.enable = false;
-          };
-
-          #### Rust
-          rust-analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-          };
-
-          astro = {
-            enable = true;
-          };
-
-          tailwindcss.enable = true;
-
-          eslint.enable = true;
-
-          emmet_ls = {
-            enable = true;
-          };
-
-          html.enable = true;
-
-          #### Nix
-          nil_ls = {
-            enable = true;
-          };
-        };
-      };
 
       };
     };
