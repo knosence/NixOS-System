@@ -12,17 +12,21 @@
         clangd.enable = true;
         gopls.enable = true;
         nil_ls.enable = true;
-        lua-ls.enable = {
+        lua-ls = {
           enable = true;
           settings.telemetry.enable = false;
         };
-        rust-analyzer.enable = true;
+        rust-analyzer = {
+          enable = true;
+          installRustc = true;
+          installCargo = true;
+        };
         # Frontend 
         html.enable = true;
         astro.enable = true;
         tailwindcss.enable = true;
         tsserver.enable = true;
-        emmet-language-server.enable = true;
+        emmet_ls.enable = true;
         eslint.enable = true;
       };
       keymaps = {
@@ -40,6 +44,6 @@
         };
       };
     };
-    plugins.rust-tools.enable = true;
+    rust-tools.enable = true;
   };
 }

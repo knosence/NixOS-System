@@ -10,12 +10,13 @@
     ./_git.nix
     ./_ionide.nix 
     ./_lightline.nix
-    ./lsp.nix
+    ./_lsp.nix
     # ./_lualine.nix
     ./_none-ls.nix
     ./_nvim-tree.nix
     ./_options.nix
     ./_telescope.nix
+    ./_toggleterm.nix
   ];
 
   programs.nixvim = {
