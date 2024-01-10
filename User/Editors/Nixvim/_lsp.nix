@@ -10,7 +10,6 @@
       servers = {
         bashls.enable = true;
         clangd.enable = true;
-        fsautocomplete.enable = true;
         gopls.enable = true;
         nil_ls.enable = true;
         lua-ls.enable = {
@@ -23,7 +22,7 @@
         astro.enable = true;
         tailwindcss.enable = true;
         tsserver.enable = true;
-        emmet_ls.enable = true;
+        emmet-language-server.enable = true;
         eslint.enable = true;
       };
       keymaps = {
@@ -35,8 +34,9 @@
           "K" = "hover";
         };
         diagnostic = {
-          "<leader>j" = "goto_next";
-          "<leader>k" = "goto_prev";
+          "<leader>D" = "open_float";
+          "[d" = "goto_next";
+          "]d" = "goto_prev";
         };
       };
     };
