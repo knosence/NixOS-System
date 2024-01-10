@@ -5,15 +5,17 @@
 
   imports = [
     ./_auto-pairs.nix   
-    ./_options.nix
     ./_bufferline.nix
     ./_cmp.nix
     ./_git.nix
     ./_ionide.nix 
     ./_lightline.nix
+    ./lsp.nix
     # ./_lualine.nix
     ./_none-ls.nix
     ./_nvim-tree.nix
+    ./_options.nix
+    ./_telescope.nix
   ];
 
   programs.nixvim = {
@@ -35,24 +37,7 @@
         action = "<cmd>Neotree toggle right<CR>";
         key = "<leader>e";
       }
-      ## Telescope Keymaps
-      {
-        action = "<cmd>Telescope find_files<CR>";
-        key = "<leader>ff";
-      }
-      {
-        action = "<cmd>Telescope live_grep<CR>";
-        key = "<leader>fg";
-      }
-      {
-        action = "<cmd>Telescope buffer<CR>";
-        key = "<leader>fb";
-      }
-      {
-        action = "<cmd>Telescope help_tags<CR>";
-        key = "<leader>fh";
-      }
-    ];
+     ];
 
     # Clopboards
     clipboard.providers = {
@@ -76,9 +61,6 @@
 
       ## oil
       oil.enable = true;
-      
-      ## telescope
-      telescope.enable = true;
 
       ## Fidget
       fidget.enable = true;
@@ -86,10 +68,6 @@
       ## Gitgutter
       gitgutter.enable = true;
 
-      ## Neo-tree
-      neo-tree = {
-        enable = true;
-      };
 
       ## Treesitter
       treesitter.enable = true;
