@@ -10,6 +10,8 @@
     ./_cmp.nix
     ./_git.nix
     ./_ionide.nix 
+    ./_lightline.nix
+    # ./_lualine.nix
   ];
 
   programs.nixvim = {
@@ -94,9 +96,6 @@
       treesitter.enable = true;
       
       ts-autotag.enable = true;
-
-      ## Lualine
-      lualine.enable = true;
 
       emmet.enable = true;
     
