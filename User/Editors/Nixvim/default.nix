@@ -8,6 +8,8 @@
     ./_options.nix
     ./_bufferline.nix
     ./_cmp.nix
+    ./_git.nix
+    
   ];
 
   programs.nixvim = {
