@@ -18,7 +18,7 @@
     inputs.nixvim.homeManagerModules.nixvim
 
     ./../../User/App/kitty/kitty.nix
-    ./../../User/Editors/nixvim.nix
+    ./../../User/Editors/Nixvim
 
   ];
 
