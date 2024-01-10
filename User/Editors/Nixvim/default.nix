@@ -9,7 +9,7 @@
     ./_bufferline.nix
     ./_cmp.nix
     ./_git.nix
-    
+    ./_ionide.nix 
   ];
 
   programs.nixvim = {
