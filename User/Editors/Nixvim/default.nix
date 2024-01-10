@@ -2,8 +2,10 @@
 
 {
 
+
   imports = [
     ./_auto-pairs.nix   
+    ./_options.nix
   ];
 
   programs.nixvim = {
