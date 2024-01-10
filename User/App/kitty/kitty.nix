@@ -8,9 +8,9 @@
       name = "Mononoki Nerd Font Mono";
     };
     settings = {
-      bold_font = "auto";
-      italic_font = "auto";
-      bold_italic_font = "auto";
+      bold_font = "Mononoki Nerd Font Mono Bold";
+      italic_font = "Mononoki Nerd Mono Italic";
+      bold_italic_font = "Mononoki Nerd Font Mono Bold Italic";
       font_size = 12;
       strip_trailing_spaces = "smart";
       enable_audio_bell = "no";

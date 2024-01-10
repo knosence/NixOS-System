@@ -58,6 +58,7 @@
     lf
     xclip
     wl-clipboard
+    onlyoffice-bin
 
 
     # Developement

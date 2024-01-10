@@ -6,6 +6,6 @@
       indent = true;
     };
     treesitter-context.enable = true;
-    rainbow-delimiters.enable = true;
+#    rainbow-delimiters.enable = true;
   };
 }

@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins.toggleterm = {
     enable = true;
-    openMapping = "<leader>t";
+    openMapping = "<C-/>";
     direction = "horizontal";
   };
 }
