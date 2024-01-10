@@ -81,7 +81,20 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services = {
+    printing = {
+      enable = true;
+      drivers = [
+        pkgs.epson-escpr
+        pkgs.epson-escpr2
+      ];
+    };
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -132,6 +145,8 @@
     wget
     git
     gnumake
+    epson-escpr
+    epson-escpr2
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

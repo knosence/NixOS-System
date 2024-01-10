@@ -128,13 +128,6 @@
 
   programs.zsh = {
     enable = true;
-    shellAliases = {
-      ll = "ls -l";
-      la = "ls -a";
-      ".." = "cd ..";
-      "hm." = "cd ~/.system && home-manager switch --flake .";
-      update = "cd ~/.system && nix flake update";
-    };
   };
 
 }

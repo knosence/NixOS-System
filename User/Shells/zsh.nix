@@ -11,7 +11,6 @@ programs.zsh = {
         save = 50000;
       };
       shellAliases = import ./aliases.nix;
-      defaultKeymap = "vim";
 
       plugins = [
         {
@@ -52,4 +51,16 @@ programs.zsh = {
       # logoutExtra
       # localVariables
   };
+
+  home.packages = with pkgs; [
+    bat
+    fd
+    colorls
+    ripgrep
+    fd
+    fzf
+    unzip
+    htop
+    zellij
+  ];
 }
