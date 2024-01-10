@@ -6,9 +6,14 @@
   imports = [
     ./_auto-pairs.nix   
     ./_options.nix
+    ./_bufferline.nix
+    ./_cmp.nix
   ];
 
   programs.nixvim = {
+    
+    
+
     enable = true;
     vimAlias = true;
     viAlias = true;
@@ -88,9 +93,6 @@
       
       ts-autotag.enable = true;
 
-      ## BufferLine
-      bufferline.enable = true;
-
       ## Lualine
       lualine.enable = true;
 
@@ -161,39 +163,6 @@
         };
       };
 
-      ## Compy
-      nvim-cmp = {
-        enable = true;
-        autoEnableSources = true;
-        sources = [
-          {name = "nvim_lsp";}
-          {name = "path";}
-          {name = "buffer";}
-          {name = "luasnip";}
-        ];
-
-        mapping = {
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<Tab>" = {
-            action = ''
-        function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expandable() then
-            luasnip.expand()
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          elseif check_backspace() then
-            fallback()
-          else
-            fallback()
-          end
-        end
-            '';
-            modes = [ "i" "s" ];
-          };
-        };
-      };
       };
     };
   }
