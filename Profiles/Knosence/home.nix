@@ -19,6 +19,7 @@
 
     ./../../User/App/kitty/kitty.nix
     ./../../User/Editors/Nixvim
+    ./../../User/Shells/zsh.nix
 
   ];
 
@@ -40,25 +41,24 @@
   home.packages = with pkgs;[
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    hello
-    zsh
     brave
     obsidian
-    zellij
-    lazygit
-    fd
-    ripgrep
     nerdfonts
     kitty
+    onlyoffice-bin
 
 
     # Utils
     unzip
+    lazygit
+    zellij
+    fd
+    ripgrep
     tree
     lf
     xclip
+    zsh
     wl-clipboard
-    onlyoffice-bin
 
 
     # Developement
