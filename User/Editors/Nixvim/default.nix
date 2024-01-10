@@ -2,7 +2,6 @@
 
 {
 
-
   imports = [
     ./_auto-pairs.nix   
     ./_bufferline.nix
@@ -71,9 +70,6 @@
       ## Gitgutter
       gitgutter.enable = true;
 
-
-      ## Treesitter
-      treesitter.enable = true;
       
       ts-autotag.enable = true;
 
