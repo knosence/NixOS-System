@@ -36,6 +36,7 @@
           "gt" = "type_definition";
           "gi" = "implementation";
           "K" = "hover";
+          "<leader>ca" = "code_action";
         };
         diagnostic = {
           "<leader>D" = "open_float";

@@ -85,5 +85,11 @@ programs.zsh = {
     unzip
     htop
     zellij
+    lazygit
+    tree
+    lf
+    xclip
+    zsh
+    wl-clipboard
   ];
 }

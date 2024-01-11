@@ -50,34 +50,6 @@
     spotify
 
 
-    # Utils
-    unzip
-    lazygit
-    zellij
-    fd
-    ripgrep
-    tree
-    lf
-    xclip
-    zsh
-    wl-clipboard
-
-
-    # Developement
-    # zig # For C compiler
-    clang_17
-    nodejs_21
-    nodePackages_latest.nodejs
-    tree-sitter
-    nil
-    lua
-    lua-language-server
-    lua52Packages.luarocks-nix
-
-
-    # Rust
-    rustup
-
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of

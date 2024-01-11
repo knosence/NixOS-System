@@ -11,6 +11,7 @@
     #./_lightline.nix
     ./_lsp.nix
     ./_lualine.nix
+    ./_noice.nix
     ./_none-ls.nix
     ./_nvim-tree.nix
     ./_options.nix
@@ -23,6 +24,21 @@
   
   home.packages = with pkgs;[
     vscode-extensions.astro-build.astro-vscode 
+
+    # Developement
+    # zig # For C compiler
+    clang_17
+    nodejs_21
+    nodePackages_latest.nodejs
+    tree-sitter
+    nil
+    lua
+    lua-language-server
+    lua52Packages.luarocks-nix
+
+
+    # Rust
+    rustup
   ];
 
   programs.nixvim = {
