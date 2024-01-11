@@ -46,6 +46,8 @@
     nerdfonts
     kitty
     onlyoffice-bin
+    cura
+    spotify
 
 
     # Utils

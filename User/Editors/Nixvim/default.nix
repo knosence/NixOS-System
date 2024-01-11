@@ -1,3 +1,4 @@
+{pkgs, ...}:
 {
 
   imports = [
@@ -17,6 +18,11 @@
     ./_toggleterm.nix
     ./_treesitter.nix
     ./_wilder.nix
+  ];
+
+  
+  home.packages = with pkgs;[
+    vscode-extensions.astro-build.astro-vscode 
   ];
 
   programs.nixvim = {

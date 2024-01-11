@@ -31,6 +31,24 @@ programs.zsh = {
             sha256 = "0w8x5ilpwx90s2s2y56vbzq92ircmrf0l5x8hz4g1nx3qzawv6af";
           };
         }
+        {
+          name = "zsh-autocomplete";
+          src = pkgs.fetchFromGitHub {
+            owner = "marlonrichert";
+            repo = "zsh-autocomplete";
+            rev = "c7b65508fd3a016dc9cdb410af9ee7806b3f9be1";
+            sha256= "1c8hvclwdf3xcz8fxj9kvdahxq3mq40ipqcvf1hnaj2ffs86fq5v";
+          };
+        }
+        {
+          name = "fast-syntax-highlighting";
+          src = pkgs.fetchFromGitHub {
+            owner = "zdharma-continuum";
+            repo = "fast-syntax-highlighting";
+            rev = "cf318e06a9b7c9f2219d78f41b46fa6e06011fd9";
+            sha256 = "1bmrb724vphw7y2gwn63rfssz3i8lp75ndjvlk5ns1g35ijzsma5";
+          };
+        }
       ];
 
       sessionVariables = rec {
@@ -44,6 +62,11 @@ programs.zsh = {
         GIT_EDITOR = EDITOR;
 
 
+      };
+
+      oh-my-zsh = {
+        enable = true;
+        theme = "refined";
       };
       # envExtra
       # profileExtra
