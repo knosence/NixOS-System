@@ -56,25 +56,36 @@
       {
         action = "<cmd>Neotree toggle right<CR>";
         key = "<leader>e";
+        options.desc = "Open/Close Neotree";
       }
       {
-        key = "<leader>fm";
+        mode = "n";
+        key = "<leader>c";
+        action = "nil";
+        options.desc = "Code";
+      }
+      {
+        key = "<leader>cm";
         action = "<CMD>lua vim.lsp.buf.format()<CR>";
+        options.desc = "Code Format";
       }
       {
         mode = "n";
         key = "<leader>rs";
         action = "<CMD>RustStartStandaloneServerForBuffer<CR>";
+        options.desc = "Rust Start Standalone Server For Buffer";
       }
       {
         mode = "n";
         key = "<leader>t";
         action = "<CMD>ToggleTerm<CR>";
+        options.desc = "Open/Close Terminal";
       }
       {
-        mode = "t";
-        key = "<ESC>";
-        action = "<CMD>ToggleTerm<CR>";
+        mode = "n";
+        key = "<leader>r";
+        action = "nil";
+        options.desc = "Rust Actions";
       }
      ];
 
