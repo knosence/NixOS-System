@@ -2,7 +2,7 @@
 {
 
   imports = [
-    ./_alpha.nix
+    # ./_alpha.nix
     ./_auto-pairs.nix   
     ./_bufferline.nix
     ./_cmp.nix
@@ -16,6 +16,7 @@
     ./_none-ls.nix
     ./_nvim-tree.nix
     ./_options.nix
+    ./_startify.nix
     ./_telescope.nix
     ./_toggleterm.nix
     ./_treesitter.nix
