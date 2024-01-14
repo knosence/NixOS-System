@@ -2,12 +2,12 @@
 {
 
   imports = [
+    ./_alpha.nix
     ./_auto-pairs.nix   
     ./_bufferline.nix
     ./_cmp.nix
     ./_git.nix
     ./_indent-blankline.nix
-    ./_vimPlugins.nix 
     #./_lightline.nix
     ./_lsp.nix
     ./_lualine.nix
@@ -18,6 +18,7 @@
     ./_telescope.nix
     ./_toggleterm.nix
     ./_treesitter.nix
+    ./_vimPlugins.nix 
     ./_wilder.nix
   ];
 
@@ -35,7 +36,11 @@
     lua
     lua-language-server
     lua52Packages.luarocks-nix
-
+    # To get Drizzle ORM studio to work in Brave Browser
+    nss
+    mkcert
+    
+    flyctl
 
     # Rust
     rustup
@@ -65,7 +70,7 @@
         options.desc = "Code";
       }
       {
-        key = "<leader>cm";
+        key = "<leader>cf";
         action = "<CMD>lua vim.lsp.buf.format()<CR>";
         options.desc = "Code Format";
       }
