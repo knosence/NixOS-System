@@ -2,11 +2,11 @@
 {
 
   imports = [
+    ./_alpha.nix
     ./_auto-pairs.nix   
     ./_bufferline.nix
     ./_cmp.nix
     ./_comment.nix
-    ./_dashboard.nix
     ./_git.nix
     ./_indent-blankline.nix
     #./_lightline.nix
