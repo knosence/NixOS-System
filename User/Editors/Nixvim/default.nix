@@ -6,6 +6,7 @@
     ./_auto-pairs.nix   
     ./_bufferline.nix
     ./_cmp.nix
+    ./_comment.nix
     ./_git.nix
     ./_indent-blankline.nix
     #./_lightline.nix
