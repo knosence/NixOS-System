@@ -20,6 +20,7 @@
     ./../../User/App/kitty/kitty.nix
     ./../../User/Editors/Nixvim
     ./../../User/Shells/zsh.nix
+    ./../../User/App/Cura
 
   ];
 
