@@ -26,7 +26,6 @@
         nixos = lib.nixosSystem {
           inherit system;
           modules = [ ./Profiles/Knosence/configuration.nix ];
-          nixpkgs.overlay = [ overlay.cura ];
         };
       };
 
