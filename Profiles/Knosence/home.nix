@@ -1,9 +1,12 @@
 { config, pkgs, nixpkgs, inputs, ... }:
+
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "knosence";
-  home.homeDirectory = "/home/knosence";
+  home = { 
+    username = "knosence";
+    homeDirectory = "/home/knosence";
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -20,26 +23,21 @@
     ./../../User/App/kitty/kitty.nix
     ./../../User/Editors/Nixvim
     ./../../User/Shells/zsh.nix
-    ./../../User/App/Cura
 
   ];
 
-    
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
   # xdg.configFile.nvim.source = ../../User/Editors/nvim;
-  
+
   nixpkgs.config = {
 
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "electron-25.9.0"
-    ];
+    permittedInsecurePackages = [ "electron-25.9.0" ];
   };
 
-
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     brave
@@ -47,11 +45,10 @@
     nerdfonts
     kitty
     onlyoffice-bin
-    cura
     spotify
     gimp
-    (callPackage ./../../User/App/Cura {})
-
+    zoom-us
+    discord
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -103,8 +100,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.zsh = {
-    enable = true;
-  };
+  programs.zsh = { enable = true; };
 
 }

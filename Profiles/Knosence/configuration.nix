@@ -122,7 +122,7 @@
   users.users.knosence = {
     isNormalUser = true;
     description = "NaDario M. Seays Sr";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "dialout" "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
       kate
@@ -141,12 +141,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    zellij
     wget
     git
     gnumake
     epson-escpr
     epson-escpr2
+
+    # Appimage
+    (callPackage ./../../User/App/Cura {}) 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
