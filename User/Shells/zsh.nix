@@ -3,7 +3,6 @@
 programs.zsh = {
       enable = true;
       enableCompletion = true;
-      #starship.enable = true;
       enableAutosuggestions = true;
       history = {
         path = ".local/share/zsh/.zsh_history";
@@ -77,7 +76,6 @@ programs.zsh = {
 
   home.packages = with pkgs; [
     bat
-    fd
     colorls
     ripgrep
     fd
