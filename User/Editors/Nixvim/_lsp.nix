@@ -42,6 +42,9 @@
           astro.enable = true;
           tailwindcss.enable = true;
           tsserver.enable = true;
+          prismals.enable = true;
+          dockerls.enable = true;
+          cssls.enable = true;
           emmet_ls.enable = true;
           eslint.enable = true;
         };

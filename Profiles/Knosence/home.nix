@@ -32,7 +32,6 @@
   # xdg.configFile.nvim.source = ../../User/Editors/nvim;
 
   nixpkgs.config = {
-
     allowUnfree = true;
     permittedInsecurePackages = [ "electron-25.9.0" ];
   };
@@ -49,6 +48,7 @@
     gimp
     zoom-us
     discord
+    blender
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -63,6 +63,12 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  # Let Home Manager install and manage itself.
+  programs = {
+    home-manager.enable = true;
+    zsh.enable = true; 
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -96,10 +102,5 @@
     EDITOR = "nvim";
 
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  programs.zsh = { enable = true; };
 
 }

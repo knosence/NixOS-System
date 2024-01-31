@@ -89,5 +89,8 @@ programs.zsh = {
     xclip
     zsh
     wl-clipboard
+    openssl
+    nodePackages_latest.prisma
+    prisma-engines
   ];
 }

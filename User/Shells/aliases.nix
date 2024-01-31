@@ -2,8 +2,9 @@
   # Rebindings
   ls = "colorls";
   la = "colorls -a";
-  ".." = "cd ..";
+  ".." = "cd .. && ls";
   "f" = "fzf --print0 | xargs -0 -o vim";
+
 
   # shorten system update, upgrades, and garbage collection
   sgc =
