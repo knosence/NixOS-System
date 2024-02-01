@@ -6,7 +6,7 @@
   "f" = "fzf --print0 | xargs -0 -o vim";
 
   # Flakes commands for quicker access
-  nix-prisma = "~/.system/User/flakes/prisma.nix cp . && nix develop";
+  nix-prisma = "cp ~/.system/User/flakes/prisma.nix flake.nix";
 
   # shorten system update, upgrades, and garbage collection
   sgc =

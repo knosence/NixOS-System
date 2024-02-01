@@ -37,6 +37,7 @@
             installRustc = true;
             installCargo = true;
           };
+          marksman.enable = true;
           # Frontend 
           html.enable = true;
           astro.enable = true;
