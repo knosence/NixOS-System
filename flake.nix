@@ -14,11 +14,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    inputs.flake-utils.url = "github:numtide/flake-utils";
-
   };
 
-  outputs = { self, nixpkgs, home-manager, flake-utils, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -39,21 +37,6 @@
         };
       };
 
-      devShell = pkgs.mkShell {
-        nativeBuildInputs = [ pkgs.bashInteractive ];
-        buildInputs = with pkgs; [
-          nodePackages.prisma
-          nodePackages.yarn
-          nodejs_20
-        ];
-        shellHook = with pkgs; ''
-          export PRISMA_SCHEMA_ENGINE_BINARY="${prisma-engines}/bin/schema-engine"
-          export PRISMA_QUERY_ENGINE_BINARY="${prisma-engines}/bin/query-engine"
-          export PRISMA_QUERY_ENGINE_LIBRARY="${prisma-engines}/lib/libquery_engine.node"
-          export PRISMA_INTROSPECTION_ENGINE_BINARY="${prisma-engines}/bin/introspection-engine"
-          export PRISMA_FMT_BINARY="${prisma-engines}/bin/prisma-fmt"
-        '';
-      };
     };
 
 }
