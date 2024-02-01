@@ -21,22 +21,24 @@ Neovim's Features:
 7. Indent-blankline
 8. lightline (inactive)
 9. lsp
-    a. bashls
-    b. clangd
-    c. gopls
-    b. nil_ls
-    e. lua-ls
-    f. rust-analyzer
-    g. html
-    h. astro
-    i. tailwindcss
-    j. tsserver
-    k. prismals
-    l. dockerls
-    m. cssls
-    n. emmet_ls
-    o. eslint
-    p. marksman
+| **  | Language server |
+| --- | --------------- |
+| a.  | bashls          |
+| b.  | clangd          |
+| c.  | gopls           |
+| d.  | nil_ls          |
+| e.  | lua-ls          |
+| f.  | rust-analyzer   |
+| g.  | html            |
+| h.  | astro           |
+| i.  | tailwindcss     |
+| j.  | tsserver        |
+| k.  | prismals        |
+| l.  | dockerls        |
+| m.  | cssls           |
+| n.  | emmet_ls        |
+| o.  | eslint          |
+| p.  | marksman        | 
 10. lualine (active)
 11. Noice
 12. None-ls
@@ -46,9 +48,11 @@ Neovim's Features:
 16. telescope
 17. treesitter
 18. vimPlugins
-    a. Ionide-vim
-    b. vim-astro
-    c. dressing-nvim
+| **  | Vim Plugin   |
+| --- | ------------ |
+| a.  | Ionide-vim   |
+| b.  | vim-astro    |
+| c.  | dressing-vim |
 19. wilder
 20. multicursors
 
