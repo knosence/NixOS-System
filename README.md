@@ -21,6 +21,7 @@ Neovim's Features:
 7. Indent-blankline
 8. lightline (inactive)
 9. lsp
+    
 | pos  | Language server |
 | --- | --------------- |
 | a.  | bashls          |
@@ -39,6 +40,7 @@ Neovim's Features:
 | n.  | emmet_ls        |
 | o.  | eslint          |
 | p.  | marksman        | 
+
 10. lualine (active)
 11. Noice
 12. None-ls
@@ -48,11 +50,13 @@ Neovim's Features:
 16. telescope
 17. treesitter
 18. vimPlugins
+
 | pos  | Vim Plugin   |
 | --- | ------------ |
 | a.  | Ionide-vim   |
 | b.  | vim-astro    |
 | c.  | dressing-vim |
+
 19. wilder
 20. multicursors
 
