@@ -6,6 +6,11 @@
       Ionide-vim
       vim-astro
       dressing-nvim
+
+      # for neo-tree
+      nui-nvim
+      nvim-web-devicons
+      plenary-nvim
     ];
   };
 
