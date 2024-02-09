@@ -11,6 +11,7 @@
     #./_lightline.nix
     ./_lsp.nix
     ./_lualine.nix
+    ./_neo-tree.nix
     ./_noice.nix
     ./_none-ls.nix
     ./_nvim-tree.nix
