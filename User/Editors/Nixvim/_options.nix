@@ -4,14 +4,19 @@
 
       number = true;
       relativenumber = true;
-
       shiftwidth = 2;
-      clipboard = "unnamedplus";
       autoindent = true;
       smartindent = true;
       tabstop = 2;
       expandtab = true;
       
+    clipboard = {
+      register = "unnamedplus";
+      providers = {
+        wl-copy.enable = true;
+        xclip.enable = true;
+      };
+    };
       termguicolors = true;
       cursorline = true;
 

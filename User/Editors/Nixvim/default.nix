@@ -1,9 +1,8 @@
-{pkgs, ...}:
-{
+{ pkgs, ... }: {
 
   imports = [
     # ./_alpha.nix
-    ./_auto-pairs.nix   
+    ./_auto-pairs.nix
     ./_bufferline.nix
     ./_cmp.nix
     ./_comment.nix
@@ -20,13 +19,12 @@
     ./_telescope.nix
     ./_toggleterm.nix
     ./_treesitter.nix
-    ./_vimPlugins.nix 
+    ./_vimPlugins.nix
     ./_wilder.nix
   ];
 
-  
-  home.packages = with pkgs;[
-    vscode-extensions.astro-build.astro-vscode 
+  home.packages = with pkgs; [
+    vscode-extensions.astro-build.astro-vscode
 
     # Developement
     # zig # For C compiler
@@ -41,7 +39,7 @@
     # To get Drizzle ORM studio to work in Brave Browser
     nss
     mkcert
-    
+
     flyctl
 
     # Rust
@@ -52,7 +50,7 @@
     enable = true;
     vimAlias = true;
     viAlias = true;
-    
+
     # Colorscheme
     colorschemes.catppuccin.enable = true;
 
@@ -61,7 +59,7 @@
 
       ## Neotree Keymaps
       {
-        action = "<cmd>Neotree toggle right<CR>";
+        action = "<cmd>Neotree toggle float<CR>";
         key = "<leader>e";
         options.desc = "Open/Close Neotree";
       }
@@ -94,25 +92,17 @@
         action = "nil";
         options.desc = "Rust Actions";
       }
-     ];
+    ];
 
-    # Clopboards
-    clipboard.providers = {
-      wl-copy.enable = true;
-      xclip.enable = true;
-    };
-    
     # Globals
     globals.mapleader = " ";
-    
-        
-    
+
     # Plugins
-    plugins = { 
-      
+    plugins = {
+
       ## Whichkey
       which-key.enable = true;
-      
+
       ## luaSnips
       luasnip.enable = true;
 
@@ -121,14 +111,13 @@
 
       ## Fidget
       fidget.enable = true;
-      
+
       ts-autotag.enable = true;
 
       emmet.enable = true;
-    
+
       nvim-colorizer.enable = true;
 
-
-      };
     };
-  }
+  };
+}

@@ -7,6 +7,7 @@
 
   # Flakes commands for quicker access
   nix-prisma = "cp ~/.system/User/flakes/prisma.nix flake.nix";
+  run-flake = "nix develop";
 
   # shorten system update, upgrades, and garbage collection
   sgc =
@@ -18,4 +19,7 @@
   "home." = "cd ~/.system && home-manager switch --flake .";
   "sys." = "cd ~/.system && sudo nixos-rebuild switch --flake .";
   update = "cd ~/.system && nix flake update";
+
+  # Projects
+  nvim-unity-market = "cd ~/Projects/unity-market-admin && zellij && nvim .";
 }

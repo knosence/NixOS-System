@@ -2,31 +2,27 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-{
-#----==={ Imports Section }===----
+{ config, pkgs, ... }: {
+  #----==={ Imports Section }===----
 
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-
-#----==={ Bootloader Section }===----
+  #----==={ Bootloader Section }===----
 
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
- 
-  boot = { 
-     kernelPackages = pkgs.linuxPackages_zen; 
-     loader = {
-      systemd-boot.enable = true; 
-      efi.canTouchEfiVariables = true; 
-    }; 
-  }; 
 
+  boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
-#----==={ Network Section }===----
+  #----==={ Network Section }===----
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -37,13 +33,13 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  
+
   hardware.bluetooth = {
-    enable = true; 
+    enable = true;
     powerOnBoot = true;
   };
 
-#----==={ Locale Section }===----
+  #----==={ Locale Section }===----
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -63,31 +59,32 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-#----==={ Services }===----
+  #----==={ Services }===----
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager = {
+    sddm.enable = true;
+    plasma5.enable = true;
+  };
 
   services.blueman.enable = true;
-  
+
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
   # Enable CUPS to print documents.
   services = {
     printing = {
       enable = true;
-      drivers = [
-        pkgs.epson-escpr
-        pkgs.epson-escpr2
-      ];
+      drivers = [ pkgs.epson-escpr pkgs.epson-escpr2 ];
     };
     avahi = {
       enable = true;
@@ -98,9 +95,7 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio = {
-    enable = false;
-  };
+  hardware.pulseaudio = { enable = false; };
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -126,14 +121,14 @@
     packages = with pkgs; [
       firefox
       kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.shells = with pkgs; [zsh];
+  environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
@@ -148,7 +143,7 @@
     epson-escpr2
 
     # Appimage
-    (callPackage ./../../User/App/Cura {}) 
+    (callPackage ./../../User/App/Cura { })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -177,8 +172,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
