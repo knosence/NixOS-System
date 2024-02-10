@@ -61,8 +61,13 @@
       ## Neotree Keymaps
       {
         action = "<cmd>Neotree toggle float<CR>";
-        key = "<leader>e";
+        key = "<leader>E";
         options.desc = "Open/Close Neotree";
+      }
+      {
+        action = "<cmd>NvimTreeToggle<CR>";
+        key = "<leader>e";
+        options.desc = "Open/Close Nvim-Tree";
       }
       {
         mode = "n";
@@ -83,7 +88,7 @@
       }
       {
         mode = "n";
-        key = "<leader>t";
+        key = "<a-t>";
         action = "<CMD>ToggleTerm<CR>";
         options.desc = "Open/Close Terminal";
       }
@@ -119,6 +124,32 @@
 
       nvim-colorizer.enable = true;
 
+      # nvim-lightbulb = {
+        # enable = true;
+        # float = { enabled = true; };
+      # };
+
+      vim-matchup = {
+        enable = true;
+
+        #delete (ds%)
+        #change (cs%)
+        enableSurround = true;
+      };
+
+      rainbow-delimiters.enable = true;
+
+      obsidian.enable = true;
+      
+      lspsaga = {
+        enable = true;
+        lightbulb = {
+          enable = false;
+          # sign = true;
+          # signPriority = 60;
+          # debounce = 50;
+        };
+      };
     };
   };
 }

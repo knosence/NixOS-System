@@ -1,7 +1,9 @@
 {
   programs.nixvim.plugins.toggleterm = {
     enable = true;
-    openMapping = "<C-/>";
-    direction = "horizontal";
+    insertMappings = true;
+    openMapping = "<a-t>";
+    persistMode = true;
+    direction = "float";
   };
 }

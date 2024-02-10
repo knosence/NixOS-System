@@ -9,7 +9,7 @@ let
         "https://github.com/Ultimaker/Cura/releases/download/${version}/UltiMaker-Cura-${version}-linux-X64.AppImage";
       hash = "sha256-EHiWoNpLKHPzv6rZrtNgEr7y//iVcRYeV/TaCn8QpEA=";
     };
-    extraPkgs = pkgs: with pkgs; [ ];
+    "extraPkgs" = pkgs: with pkgs; [ ];
   };
 in writeShellScriptBin "cura" ''
   # AppImage version of Cura loses current working directory and treats all paths relateive to $HOME.
