@@ -17,11 +17,13 @@ Neovim's Features:
 3. Bufferline
 4. CMP
 5. Comment
-6. Git
-7. Indent-blankline
-8. lightline (inactive)
-9. lsp
-    
+6. fidget
+7. Git
+8. Indent-blankline
+9. lightline (inactive)
+10. lint
+11. lsp
+
 | pos  | Language server |
 | --- | --------------- |
 | a.  | bashls          |
@@ -39,26 +41,31 @@ Neovim's Features:
 | m.  | cssls           |
 | n.  | emmet_ls        |
 | o.  | eslint          |
-| p.  | marksman        | 
+| p.  | marksman        |
 
-10. lualine (active)
-11. Noice
-12. None-ls
-13. Nvim-tree
-14. options (where options live)
-15. startify (active)
-16. telescope
-17. treesitter
-18. vimPlugins
+12. lualine (active)
+13. multicursors
+14. neo-tree
+15. Noice
+16. None-ls
+17. Nvim-tree
+18. options (where options live)
+19. startify (inactive)
+20. telescope
+21. toggleterm
+22. treesitter
+23. vimPlugins
 
-| pos  | Vim Plugin   |
-| --- | ------------ |
-| a.  | Ionide-vim   |
-| b.  | vim-astro    |
-| c.  | dressing-vim |
+| pos  | Vim Plugin       |
+| --- | ----------------- |
+| a.  | Ionide-vim        |
+| b.  | vim-astro         |
+| c.  | dressing-vim      |
+| d.  | nui-vim           |
+| e.  | nvim-web-devicons |
+| f.  | plenary-vim       |
 
 19. wilder
-20. multicursors
 
 Everything is wired into default.nix file
 
@@ -67,6 +74,7 @@ Everything is wired into default.nix file
 Uses Zsh with aliases.
 
 ## App Configs ~/User/App/*
+
 1. Cura (appimage)
-2. git 
+2. git
 3. kitty

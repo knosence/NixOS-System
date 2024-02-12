@@ -3,6 +3,7 @@
       updatetime = 100;
 
       number = true;
+      conceallevel = 1;
       relativenumber = true;
       shiftwidth = 2;
       autoindent = true;

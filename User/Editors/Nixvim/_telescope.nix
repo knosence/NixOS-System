@@ -1,5 +1,7 @@
 {
   programs.nixvim = {
+    # To find and replace, use grep find, look up whatever the item you want to look up, than ctrl-q for quick fix
+
     keymaps = [  
       {
         mode = "n";

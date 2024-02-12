@@ -35,6 +35,10 @@
     clang_17
     nodejs_21
     nodePackages_latest.nodejs
+    nodePackages_latest.eslint_d
+    nodePackages_latest.jsonlint
+    selene
+    checkstyle
     tree-sitter
     nil
     lua
@@ -71,12 +75,6 @@
         action = "<cmd>NvimTreeToggle<CR>";
         key = "<leader>e";
         options.desc = "Open/Close Nvim-Tree";
-      }
-      {
-        mode = "n";
-        key = "<a-Right>";
-        action = "c-ww";
-        options.desc = "Code";
       }
       {
         mode = "n";
@@ -143,11 +141,16 @@
         #change (cs%)
         enableSurround = true;
       };
+      
+      project-nvim.enable = true;
 
       rainbow-delimiters.enable = true;
 
-      obsidian.enable = true;
-      
+      obsidian = {
+        enable = true;
+        ui.enable = true;
+        ui.updateDebounce = 500;
+      };
       lspsaga = {
         enable = true;
         lightbulb = {

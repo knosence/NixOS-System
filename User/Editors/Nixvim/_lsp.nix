@@ -55,6 +55,10 @@
               action = "definition";
               desc = "Goto Definitions";
             };
+            "<leader>gr" = {
+              action = "rename";
+              desc = "Rename text across file";
+            };
             "<leader>gD" = {
               action = "references";
               desc = "Goto References";
