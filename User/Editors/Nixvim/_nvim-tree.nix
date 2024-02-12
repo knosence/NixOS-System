@@ -24,6 +24,9 @@
       # notify.threshold = "error";
       selectPrompts = true;
       # view.float.enable = true;
+      disableNetrw = true;
+      hijackCursor = true;
+      hijackNetrw = true;
     };
   };
 }

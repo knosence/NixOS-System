@@ -1,16 +1,19 @@
 { pkgs, ... }: {
 
   imports = [
-    # ./_alpha.nix
+    ./_alpha.nix
     ./_auto-pairs.nix
     ./_bufferline.nix
     ./_cmp.nix
     ./_comment.nix
+    ./_fidget.nix
     ./_git.nix
     ./_indent-blankline.nix
     #./_lightline.nix
+    ./_lint.nix
     ./_lsp.nix
     ./_lualine.nix
+    ./_multicursors.nix
     ./_neo-tree.nix
     ./_noice.nix
     ./_none-ls.nix
@@ -71,6 +74,12 @@
       }
       {
         mode = "n";
+        key = "<a-Right>";
+        action = "c-ww";
+        options.desc = "Code";
+      }
+      {
+        mode = "n";
         key = "<leader>c";
         action = "nil";
         options.desc = "Code";
@@ -107,16 +116,14 @@
     plugins = {
 
       ## Whichkey
-      which-key.enable = true;
-
+      which-key = {
+        enable = true;
+      };
       ## luaSnips
       luasnip.enable = true;
 
       ## oil
-      oil.enable = true;
-
-      ## Fidget
-      fidget.enable = true;
+      # oil.enable = true;
 
       ts-autotag.enable = true;
 
