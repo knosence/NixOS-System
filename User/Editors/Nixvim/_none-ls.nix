@@ -1,6 +1,7 @@
 {
   programs.nixvim.plugins.none-ls = {
     enable = true;
+    enableLspFormat = true;
     sources = {
       code_actions = {
         eslint.enable = true;
