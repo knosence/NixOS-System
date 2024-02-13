@@ -7,6 +7,7 @@
     ./_cmp.nix
     ./_comment.nix
     ./_fidget.nix
+    ./_format-on-save.nix
     ./_git.nix
     ./_indent-blankline.nix
     #./_lightline.nix
@@ -145,6 +146,8 @@
       project-nvim.enable = true;
 
       rainbow-delimiters.enable = true;
+
+      fugitive.enable = true;
 
       obsidian = {
         enable = true;

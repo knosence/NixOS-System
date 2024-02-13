@@ -11,8 +11,10 @@
       hijackCursor = true;
       hijackNetrw = true;
       hijackUnnamedBufferWhenOpening = true;
-      actions.openFile.quitOnOpen = true;
-
+      actions = {
+        openFile.quitOnOpen = true;
+        removeFile.closeWindow = true;
+      };
       diagnostics = {
         enable = true;
         showOnDirs = true;
