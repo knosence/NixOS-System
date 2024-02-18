@@ -3,7 +3,7 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home = { 
+  home = {
     username = "knosence";
     homeDirectory = "/home/knosence";
   };
@@ -33,7 +33,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [ "electron-25.9.0" ];
+    permittedInsecurePackages = [ "electron-19.1.9" "electron-25.9.0" ];
   };
 
   home.packages = with pkgs; [
@@ -51,6 +51,7 @@
     blender
     bottom
     yazi
+    etcher
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -69,7 +70,7 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    zsh.enable = true; 
+    zsh.enable = true;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -11,9 +11,6 @@
 
   #----==={ Bootloader Section }===----
 
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     loader = {
@@ -61,16 +58,18 @@
 
   #----==={ Services }===----
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager = {
-    sddm.enable = true;
-    plasma5.enable = true;
+  services = {
+    blueman.enable = true;
+    xserver = {
+      # Enable the X11 windowing system.
+      enable = true;
+      # Enable the KDE Plasma Desktop Environment.
+      displayManager = {
+        sddm.enable = true;
+        # plasma5.enable = true;
+      };
+    };
   };
-
-  services.blueman.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
