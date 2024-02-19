@@ -64,10 +64,8 @@
       # Enable the X11 windowing system.
       enable = true;
       # Enable the KDE Plasma Desktop Environment.
-      displayManager = {
-        sddm.enable = true;
-        # plasma5.enable = true;
-      };
+      displayManager = { sddm.enable = true; };
+      desktopManager = { plasma5.enable = true; };
     };
   };
 
@@ -134,7 +132,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
     gnumake

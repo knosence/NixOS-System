@@ -11,6 +11,8 @@
       nui-nvim
       nvim-web-devicons
       plenary-nvim
+
+      lazygit-nvim
     ];
   };
 

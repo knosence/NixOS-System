@@ -2,14 +2,7 @@
   programs.nixvim = {
     # To find and replace, use grep find, look up whatever the item you want to look up, than ctrl-q for quick fix
 
-    keymaps = [  
-      {
-        mode = "n";
-        key = "<leader>f";
-        action = "nil";
-        options.desc = "Telescope Actions";
-      }
-    ];
+    keymaps = [ ];
     plugins.telescope = {
       enable = true;
       keymaps = {
@@ -34,7 +27,7 @@
           desc = "Telescope Git Files";
         };
       };
-      extensions.fzf-native = {enable = true;};
+      extensions.fzf-native = { enable = true; };
     };
   };
 }

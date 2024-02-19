@@ -1,25 +1,13 @@
 {
   programs.nixvim = {
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>d";
-        action = "nil";
-        options.desc = "LSP Diagnostic";
-      }
-      {
-        mode = "n";
-        key = "<leader>g";
-        action = "nil";
-        options.desc = "LSP Goto";
-      }
-    ];
 
     plugins = {
-      #   lsp-format = {
-      #     enable = true;
-      #     lspServerToEnable = "all";
-      #   };
+      rust-tools.enable = true;
+      lsp-format = {
+        enable = true;
+        lspServersToEnable = "all";
+        setup.eslint.sync = true;
+      };
 
       lsp = {
         enable = true;
@@ -92,12 +80,6 @@
             };
           };
         };
-      };
-      rust-tools.enable = true;
-      lsp-format = {
-        enable = true;
-        lspServersToEnable = "all";
-        setup.eslint.sync = true;
       };
     };
   };

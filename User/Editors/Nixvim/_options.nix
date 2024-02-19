@@ -1,16 +1,16 @@
 {
-    programs.nixvim.options = {
-      updatetime = 100;
+  programs.nixvim.options = {
+    updatetime = 100;
 
-      number = true;
-      conceallevel = 1;
-      relativenumber = true;
-      shiftwidth = 2;
-      autoindent = true;
-      smartindent = true;
-      tabstop = 2;
-      expandtab = true;
-      
+    number = true;
+    conceallevel = 1;
+    relativenumber = true;
+    shiftwidth = 2;
+    autoindent = true;
+    smartindent = true;
+    tabstop = 2;
+    expandtab = true;
+
     clipboard = {
       register = "unnamedplus";
       providers = {
@@ -18,20 +18,22 @@
         xclip.enable = true;
       };
     };
-      termguicolors = true;
-      cursorline = true;
+    termguicolors = true;
+    cursorline = true;
 
-      mouse = "a";
+    mouse = "a";
 
-      smartcase = true;
-      ttimeoutlen = 5;
-      compatible = false;
-      autoread = true;
-      incsearch = true;
-      ignorecase = true;
-      hidden = true;
-      shortmess = "atI";
-      
-      wildmode = "list:longest";
-    };
+    smartcase = true;
+    ttimeoutlen = 5;
+    compatible = false;
+    autoread = true;
+    incsearch = true;
+    ignorecase = true;
+    hidden = true;
+    shortmess = "atI";
+
+    wildmode = "list:longest";
+
+    scrolloff = 10;
+  };
 }

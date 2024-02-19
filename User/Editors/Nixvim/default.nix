@@ -24,6 +24,7 @@
     ./_toggleterm.nix
     ./_treesitter.nix
     ./_vimPlugins.nix
+    ./_which-key.nix
     ./_wilder.nix
   ];
 
@@ -60,7 +61,16 @@
     viAlias = true;
 
     # Colorscheme
-    colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      flavour = "macchiato";
+      showBufferEnd = true;
+      # transparentBackground = true;
+      integrations = {
+        mini.enabled = true;
+
+      };
+    };
 
     # Keymaps
     keymaps = [
@@ -75,12 +85,6 @@
         action = "<cmd>NvimTreeToggle<CR>";
         key = "<leader>e";
         options.desc = "Open/Close Nvim-Tree";
-      }
-      {
-        mode = "n";
-        key = "<leader>c";
-        action = "nil";
-        options.desc = "Code";
       }
       {
         key = "<leader>cf";
@@ -101,10 +105,15 @@
       }
       {
         mode = "n";
-        key = "<leader>r";
-        action = "nil";
-        options.desc = "Rust Actions";
+        key = "<leader>tg";
+        action = "<CMD>LazyGit<CR>";
       }
+      # {
+      #   mode = "n";
+      #   key = "<leader>t";
+      #   action = "nil";
+      #   options.desc = "Toggle";
+      # }
     ];
 
     # Globals
@@ -113,8 +122,6 @@
     # Plugins
     plugins = {
 
-      ## Whichkey
-      which-key = { enable = true; };
       ## luaSnips
       luasnip.enable = true;
 
@@ -146,11 +153,12 @@
 
       fugitive.enable = true;
 
-      obsidian = {
-        enable = true;
-        ui.enable = true;
-        ui.updateDebounce = 500;
-      };
+      # obsidian = {
+      #   enable = true;
+      #   ui.enable = true;
+      #   ui.updateDebounce = 500;
+      # };
+
       lspsaga = {
         enable = true;
         lightbulb = {
@@ -160,6 +168,7 @@
           # debounce = 50;
         };
       };
+
     };
   };
 }

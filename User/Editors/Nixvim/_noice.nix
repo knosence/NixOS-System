@@ -4,21 +4,25 @@
     noice = {
       enable = true;
 
+      cmdline = {
+        enabled = true;
+        opts = { bottom_search = false; };
+      };
+
       lsp = {
         hover.enabled = true;
-        message = {
-          enabled = true;
-          view = "notify";
-        };
+        /* message = {
+             enabled = true;
+             view = "notify";
+           };
+        */
         progress = {
           enabled = true;
           format = "lsp_progress";
           formatDone = "lsp_progress";
           view = "mini";
         };
-        signature = {
-          enabled = true;
-        };
+        signature = { enabled = true; };
       };
 
       notify.enabled = true;
@@ -29,13 +33,11 @@
       };
 
       smartMove.enabled = true;
-      
-      messages.enabled = true;
+
+      # messages.enabled = true;
 
     };
 
-    notify = {
-      enable = true;
-    };
+    notify = { enable = true; };
   };
 }
