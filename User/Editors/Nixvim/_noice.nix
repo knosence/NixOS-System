@@ -11,18 +11,10 @@
 
       lsp = {
         hover.enabled = true;
-        /* message = {
-             enabled = true;
-             view = "notify";
-           };
-        */
-        progress = {
+        message = {
           enabled = true;
-          format = "lsp_progress";
-          formatDone = "lsp_progress";
-          view = "mini";
+          view = "notify";
         };
-        signature = { enabled = true; };
       };
 
       notify.enabled = true;
@@ -34,7 +26,7 @@
 
       smartMove.enabled = true;
 
-      # messages.enabled = true;
+      messages.enabled = false;
 
     };
 

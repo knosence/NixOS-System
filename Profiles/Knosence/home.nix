@@ -26,6 +26,8 @@
 
   ];
 
+  services.emacs = { enable = true; };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
@@ -52,6 +54,11 @@
     bottom
     yazi
     etcher
+    vlc
+    plasma-applet-caffeine-plus
+    caffeine-ng
+    vscode
+    emacs
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -71,6 +78,7 @@
   programs = {
     home-manager.enable = true;
     zsh.enable = true;
+    vscode.enable = true;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

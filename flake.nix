@@ -14,11 +14,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-doom-emacs, ... }@inputs:
     let
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
