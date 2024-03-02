@@ -16,5 +16,6 @@
     in {
       devShells.${system}.default =
         pkgs.mkShell { buildInputs = [ doom-emacs ]; };
+
     };
 }
