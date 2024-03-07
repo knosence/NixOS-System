@@ -1,0 +1,13 @@
+2016-01-22  Daiki Ueno	<ueno@gnu.org>
+
+	* packages/gnome-c-style/gnome-c-tests.el: Really add copyright blurb
+
+2016-01-21  Daiki Ueno	<ueno@gnu.org>
+
+	Merge commit '6bf96861b98e91ca9c3bd146697580b42d30f5d9'
+
+2016-01-19  Daiki Ueno	<ueno@gnu.org>
+
+	Merge commit 'cce1d8b50b1ceccb80c20398cd659db3a6348aac' as
+	'packages/gnome-c-style'
+

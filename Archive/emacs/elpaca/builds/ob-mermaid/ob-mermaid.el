@@ -1,0 +1,1 @@
+/home/knosence/.config/emacs/elpaca/repos/ob-mermaid/ob-mermaid.el

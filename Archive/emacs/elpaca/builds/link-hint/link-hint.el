@@ -1,0 +1,1 @@
+/home/knosence/.config/emacs/elpaca/repos/link-hint/link-hint.el

@@ -59,6 +59,16 @@
     caffeine-ng
     vscode
     emacs
+    sxiv
+    mpv
+
+    # Development Pkgs
+    nodePackages_latest.jshint
+    markdownlint-cli
+    sqlint
+    yamlfmt
+    yamllint
+    nodePackages_latest.csslint
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -95,7 +105,9 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';"
     #".config/nvim/lua".source = ./../../User/Editors/nvim/lua;
-    #".config/nvim/init.lua".source = ./../../User/Editors/nvim/init.lua;
+    #".config/nvim/init.lua".source = ./../../User/ditors/nvim/init.lua;
+    ".config/zellij/layouts".source = ./../../User/App/zellij/layouts;
+    ".config/zellij/config.kdl".source = ./../../User/App/zellij/config.kdl;
   };
 
   # Home Manager can also manage your environment variables through

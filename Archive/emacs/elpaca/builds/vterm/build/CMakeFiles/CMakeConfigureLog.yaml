@@ -1,0 +1,210 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: Linux - 6.7.6-zen1 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/knosence/.nix-profile/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/3.28.2/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom"
+      binary: "/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom'
+        
+        Run Build Command(s): /nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/bin/cmake -E env VERBOSE=1 /run/current-system/sw/bin/make -f Makefile cmTC_c28ba/fast
+        /run/current-system/sw/bin/make  -f CMakeFiles/cmTC_c28ba.dir/build.make CMakeFiles/cmTC_c28ba.dir/build
+        make[1]: Entering directory '/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom'
+        Building C object CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o
+        /home/knosence/.nix-profile/bin/cc   -v -MD -MT CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -c /nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang version 17.0.6
+        Target: x86_64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /nix/store/vyav2vxfiasngr95mcx5lxcw2x693g5s-clang-17.0.6/bin
+        Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0
+        Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0
+        Selected GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/nix/store/vyav2vxfiasngr95mcx5lxcw2x693g5s-clang-17.0.6/bin/clang-17" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom -nostdsysteminc -resource-dir /nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root -dependency-file CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -sys-header-deps -idirafter /nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include -internal-isystem /nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include -fdebug-compilation-dir=/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -x c /nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 17.0.6 based upon LLVM 17.0.6 default target x86_64-unknown-linux-gnu
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include
+         /nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include
+        End of search list.
+        Linking C executable cmTC_c28ba
+        /nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c28ba.dir/link.txt --verbose=1
+        /home/knosence/.nix-profile/bin/cc  -v CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -o cmTC_c28ba 
+        clang version 17.0.6
+        Target: x86_64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /nix/store/vyav2vxfiasngr95mcx5lxcw2x693g5s-clang-17.0.6/bin
+        Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0
+        Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0
+        Selected GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/bin/ld" -pie --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -o cmTC_c28ba /nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/Scrt1.o /nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crti.o /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtbeginS.o -L/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0 -L/nix/store/9r8z1qr5jhv90fl2457qqml7qgk88fd6-gcc-13.2.0-lib/lib -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0//lib -L/nix/store/nzvnm5wsigdi3akjkavhx0rmvc8q8q17-gcc-13.2.0-libgcc/lib -L/nix/store/0p66fy5qygglhxckxshx15vvh68zm0lv-clang-17.0.6-lib/lib -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0 -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0/../../../../lib64 -L/lib/../lib64 -L/lib -dynamic-linker=/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/ld-linux-x86-64.so.2 CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtendS.o /nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crtn.o
+        make[1]: Leaving directory '/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include]
+          add: [/nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include]
+        end of search list found
+        collapse include dir [/nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include] ==> [/nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include]
+        collapse include dir [/nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include] ==> [/nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include]
+        implicit include dirs: [/nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include;/nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom']
+        ignore line: []
+        ignore line: [Run Build Command(s): /nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/bin/cmake -E env VERBOSE=1 /run/current-system/sw/bin/make -f Makefile cmTC_c28ba/fast]
+        ignore line: [/run/current-system/sw/bin/make  -f CMakeFiles/cmTC_c28ba.dir/build.make CMakeFiles/cmTC_c28ba.dir/build]
+        ignore line: [make[1]: Entering directory '/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom']
+        ignore line: [Building C object CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/home/knosence/.nix-profile/bin/cc   -v -MD -MT CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -c /nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang version 17.0.6]
+        ignore line: [Target: x86_64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /nix/store/vyav2vxfiasngr95mcx5lxcw2x693g5s-clang-17.0.6/bin]
+        ignore line: [Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        ignore line: [Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        ignore line: [Selected GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/nix/store/vyav2vxfiasngr95mcx5lxcw2x693g5s-clang-17.0.6/bin/clang-17" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom -nostdsysteminc -resource-dir /nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root -dependency-file CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -sys-header-deps -idirafter /nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include -internal-isystem /nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include -fdebug-compilation-dir=/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/CMakeScratch/TryCompile-alpfom -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -x c /nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 17.0.6 based upon LLVM 17.0.6 default target x86_64-unknown-linux-gnu]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/resource-root/include]
+        ignore line: [ /nix/store/b0s2lkf593r3585038ws4jd3lylf2wdx-glibc-2.38-44-dev/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_c28ba]
+        ignore line: [/nix/store/paxnwg89pdx4car5fj84mmiprg952459-cmake-3.28.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c28ba.dir/link.txt --verbose=1]
+        ignore line: [/home/knosence/.nix-profile/bin/cc  -v CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -o cmTC_c28ba ]
+        ignore line: [clang version 17.0.6]
+        ignore line: [Target: x86_64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /nix/store/vyav2vxfiasngr95mcx5lxcw2x693g5s-clang-17.0.6/bin]
+        ignore line: [Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        ignore line: [Found candidate GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        ignore line: [Selected GCC installation: /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/bin/ld" -pie --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -o cmTC_c28ba /nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/Scrt1.o /nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crti.o /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtbeginS.o -L/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0 -L/nix/store/9r8z1qr5jhv90fl2457qqml7qgk88fd6-gcc-13.2.0-lib/lib -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0//lib -L/nix/store/nzvnm5wsigdi3akjkavhx0rmvc8q8q17-gcc-13.2.0-libgcc/lib -L/nix/store/0p66fy5qygglhxckxshx15vvh68zm0lv-clang-17.0.6-lib/lib -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0 -L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0/../../../../lib64 -L/lib/../lib64 -L/lib -dynamic-linker=/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/ld-linux-x86-64.so.2 CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtendS.o /nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crtn.o]
+          arg [/nix/store/8576aidksrlz1gb8r3yypc1zizi29jw5-clang-wrapper-17.0.6/bin/ld] ==> ignore
+          arg [-pie] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_c28ba] ==> ignore
+          arg [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/Scrt1.o] ==> obj [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/Scrt1.o]
+          arg [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crti.o] ==> obj [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crti.o]
+          arg [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtbeginS.o] ==> obj [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtbeginS.o]
+          arg [-L/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib] ==> dir [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib]
+          arg [-L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0] ==> dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0]
+          arg [-L/nix/store/9r8z1qr5jhv90fl2457qqml7qgk88fd6-gcc-13.2.0-lib/lib] ==> dir [/nix/store/9r8z1qr5jhv90fl2457qqml7qgk88fd6-gcc-13.2.0-lib/lib]
+          arg [-L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0//lib] ==> dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0//lib]
+          arg [-L/nix/store/nzvnm5wsigdi3akjkavhx0rmvc8q8q17-gcc-13.2.0-libgcc/lib] ==> dir [/nix/store/nzvnm5wsigdi3akjkavhx0rmvc8q8q17-gcc-13.2.0-libgcc/lib]
+          arg [-L/nix/store/0p66fy5qygglhxckxshx15vvh68zm0lv-clang-17.0.6-lib/lib] ==> dir [/nix/store/0p66fy5qygglhxckxshx15vvh68zm0lv-clang-17.0.6-lib/lib]
+          arg [-L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0] ==> dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0]
+          arg [-L/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0/../../../../lib64] ==> dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-dynamic-linker=/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/ld-linux-x86-64.so.2] ==> ignore
+          arg [CMakeFiles/cmTC_c28ba.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtendS.o] ==> obj [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtendS.o]
+          arg [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crtn.o] ==> obj [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crtn.o]
+        collapse library dir [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib] ==> [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib]
+        collapse library dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0] ==> [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        collapse library dir [/nix/store/9r8z1qr5jhv90fl2457qqml7qgk88fd6-gcc-13.2.0-lib/lib] ==> [/nix/store/9r8z1qr5jhv90fl2457qqml7qgk88fd6-gcc-13.2.0-lib/lib]
+        collapse library dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0//lib] ==> [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib]
+        collapse library dir [/nix/store/nzvnm5wsigdi3akjkavhx0rmvc8q8q17-gcc-13.2.0-libgcc/lib] ==> [/nix/store/nzvnm5wsigdi3akjkavhx0rmvc8q8q17-gcc-13.2.0-libgcc/lib]
+        collapse library dir [/nix/store/0p66fy5qygglhxckxshx15vvh68zm0lv-clang-17.0.6-lib/lib] ==> [/nix/store/0p66fy5qygglhxckxshx15vvh68zm0lv-clang-17.0.6-lib/lib]
+        collapse library dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0] ==> [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0]
+        collapse library dir [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0/../../../../lib64] ==> [/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/Scrt1.o;/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crti.o;/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtbeginS.o;/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0/crtendS.o;/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib/crtn.o]
+        implicit dirs: [/nix/store/8mc30d49ghc8m5z96yz39srlhg5s9sjj-glibc-2.38-44/lib;/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib/gcc/x86_64-unknown-linux-gnu/13.2.0;/nix/store/9r8z1qr5jhv90fl2457qqml7qgk88fd6-gcc-13.2.0-lib/lib;/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib;/nix/store/nzvnm5wsigdi3akjkavhx0rmvc8q8q17-gcc-13.2.0-libgcc/lib;/nix/store/0p66fy5qygglhxckxshx15vvh68zm0lv-clang-17.0.6-lib/lib;/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64/gcc/x86_64-unknown-linux-gnu/13.2.0;/nix/store/cmr8qd8w64w8q0cbfc30p98z2pydc1k7-gcc-13.2.0/lib64;/lib64;/lib]
+        implicit fwks: []
+      
+      
+...

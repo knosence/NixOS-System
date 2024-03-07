@@ -30,6 +30,8 @@
 
   home.packages = with pkgs; [
     vscode-extensions.astro-build.astro-vscode
+    vscode-langservers-extracted
+    emmet-language-server
 
     # Developement
     # zig # For C compiler

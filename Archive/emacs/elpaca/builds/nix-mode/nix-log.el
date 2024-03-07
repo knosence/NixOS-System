@@ -1,0 +1,1 @@
+/home/knosence/.config/emacs/elpaca/repos/nix-mode/nix-log.el

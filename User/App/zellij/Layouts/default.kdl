@@ -1,0 +1,52 @@
+layout {
+  tab name="Project" focus=true{
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane { 
+      borderless true
+      edit "./README.md"
+    }
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+
+  }
+
+  tab name="Project Terminals" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane split_direction="vertical" {
+      pane {
+        name "Quick Access"
+      }
+      pane split_direction="horizontal" {
+        name "Dev Servers"
+        pane name="Live Server" {
+          command "nix"
+          args "develop"
+        }
+        pane name="Database Server" {
+          command "nix"
+          args "develop"
+        }
+      }
+    }
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+  
+  tab name="Support Tab" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+   
+}
+
