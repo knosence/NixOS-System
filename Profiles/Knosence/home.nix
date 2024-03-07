@@ -106,7 +106,7 @@
     # '';"
     #".config/nvim/lua".source = ./../../User/Editors/nvim/lua;
     #".config/nvim/init.lua".source = ./../../User/ditors/nvim/init.lua;
-    ".config/zellij/layouts".source = ./../../User/App/zellij/layouts;
+    ".config/zellij/Layouts".source = ./../../User/App/zellij/Layouts;
     ".config/zellij/config.kdl".source = ./../../User/App/zellij/config.kdl;
   };
 
