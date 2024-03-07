@@ -22,5 +22,5 @@
 
   # Projects
   nvim-unity-market = "cd ~/Projects/unity-market-admin && zellij && nvim .";
-  code = "zellij --layout ~/.config/zellij/layouts/default.kdl";
+  "code." = "zellij --layout ~/.config/zellij/Layouts/default.kdl";
 }
