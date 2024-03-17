@@ -31,7 +31,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
-  xdg.configFile.nvim.source = ../../User/Editors/Neovim;
+  # xdg.configFile.nvim.source = ../../User/Editors/Neovim;
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -108,8 +108,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';"
-    #".config/nvim/lua".source = ./../../User/Editors/nvim/lua;
-    #".config/nvim/init.lua".source = ./../../User/ditors/nvim/init.lua;
+    ".config/nvim/lua".source = ./../../User/Editors/nvim/lua;
+    ".config/nvim/init.lua".source = ./../../User/Editors/nvim/init.lua;
     ".config/zellij/Layouts".source = ./../../User/App/zellij/Layouts;
     ".config/zellij/config.kdl".source = ./../../User/App/zellij/config.kdl;
   };
