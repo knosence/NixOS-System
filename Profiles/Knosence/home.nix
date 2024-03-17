@@ -108,8 +108,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';"
-    ".config/nvim/lua".source = ./../../User/Editors/Neovim/lua;
-    ".config/nvim/init.lua".source = ./../../User/Editors/Neovim/init.lua;
+    ".config/nvim/lua".source = ./../../User/Editors/Nvim/lua;
+    ".config/nvim/init.lua".source = ./../../User/Editors/Nvim/init.lua;
     ".config/zellij/Layouts".source = ./../../User/App/zellij/Layouts;
     ".config/zellij/config.kdl".source = ./../../User/App/zellij/config.kdl;
   };
