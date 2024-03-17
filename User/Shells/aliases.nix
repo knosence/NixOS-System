@@ -21,6 +21,7 @@
   update = "cd ~/.system && nix flake update";
 
   # Projects
-  nvim-unity-market = "cd ~/Projects/unity-market-admin && zellij && nvim .";
+  pu = "cd ~/Projects/unity-market-admin && code.";
   "code." = "zellij --layout ~/.config/zellij/Layouts/default.kdl";
+
 }
