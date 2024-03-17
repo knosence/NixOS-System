@@ -22,6 +22,7 @@
 
     ./../../User/App/kitty/kitty.nix
     # ./../../User/Editors/Nixvim
+    ./../../User/Editors/Neovim
     ./../../User/Shells/zsh.nix
 
   ];
@@ -71,7 +72,6 @@
     nodePackages_latest.csslint
 
     # Neovim Pkgs 
-    neovim
     
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -108,8 +108,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';"
-    ".config/nvim/lua".source = ./../../User/Editors/Nvim/lua;
-    ".config/nvim/init.lua".source = ./../../User/Editors/Nvim/init.lua;
+    # ".config/nvim/lua".source = ./../../User/Editors/Nvim/lua;
+    # ".config/nvim/init.lua".source = ./../../User/Editors/Nvim/init.lua;
     ".config/zellij/Layouts".source = ./../../User/App/zellij/Layouts;
     ".config/zellij/config.kdl".source = ./../../User/App/zellij/config.kdl;
   };

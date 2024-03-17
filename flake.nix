@@ -14,11 +14,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    catppuccinifier.url = "github:lighttigerXIV/catppuccinifier";
+    catppuccinifier.inputs.nixpkgs.follows = "nixpkgs";
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-doom-emacs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
       inherit (nixpkgs) lib;
       system = "x86_64-linux";
