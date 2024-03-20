@@ -9,19 +9,42 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     catppuccinifier.url = "github:lighttigerXIV/catppuccinifier";
     catppuccinifier.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Neovim
+    flake-utils.url = "github:numtide/flake-utils";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nixCats = {
+      url = "github:BirdeeHub/nixCats-nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };    
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+    "plugins-nvim-luaref" = {
+      url = "github:milisims/nvim-luaref";
+      flake = false;
+    };
+    codeium.url = "github:Exafunction/codeium.nvim";
+    sg-nvim.url = "github:sourcegraph/sg.nvim";
+    vscode-html-languageservice = {
+      url = "github:microsoft/vscode-html-languageservice";
+      flake = false;
+    };
+    "bash-debug-adapter" = {
+      url = "github:rogalmic/vscode-bash-debug";
+      flake = false;
+    };
 
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # }
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+
+  outputs = { self, nixpkgs, home-manager, flake-utils, nixCats, ... }@inputs: 
     let
       inherit (nixpkgs) lib;
       system = "x86_64-linux";
@@ -38,7 +61,10 @@
         knosence = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./Profiles/Knosence/home.nix ];
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { 
+            inherit inputs; 
+
+          };
         };
       };
 

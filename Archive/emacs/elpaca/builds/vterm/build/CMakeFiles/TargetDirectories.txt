@@ -1,5 +1,0 @@
-/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/vterm-module.dir
-/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/libvterm.dir
-/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/run.dir
-/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/edit_cache.dir
-/home/knosence/.config/emacs/elpaca/builds/vterm/build/CMakeFiles/rebuild_cache.dir

@@ -1,1 +1,0 @@
-/home/knosence/.config/emacs/elpaca/repos/projectile/projectile.el

@@ -1,14 +1,6 @@
 { pkgs, inputs, ... }: 
 
-let
-  
-  lldbAdapter = pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter;
-
-  linuxPackages = with pkgs; [
-    neovide
-  ];
-
-in {
+{
   nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
   home.packages = with pkgs; [
     neovim-remote
@@ -21,6 +13,13 @@ in {
     lua-language-server
     luajitPackages.jsregexp
     stylua
+    gcc
+    tailwindcss-language-server 
+    nixd
+    nodePackages_latest.typescript-language-server
+    # vimPlugins.mason-lspconfig-nvim
+    # vimPlugins.mason-nvim
+    vimPlugins.mason-tool-installer-nvim
   ];
 
   programs.neovim = {

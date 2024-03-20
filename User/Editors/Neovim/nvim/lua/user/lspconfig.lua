@@ -69,13 +69,14 @@ function M.config()
     "lua_ls",
     "cssls",
     "html",
-    "tsserver",
     "eslint",
     "tsserver",
     "pyright",
     "bashls",
     "jsonls",
     "yamlls",
+    "nil_ls",
+    "rust_analyzer",
   }
 
   local default_diagnostic_config = {
@@ -122,7 +123,7 @@ function M.config()
     if require_ok then
       opts = vim.tbl_deep_extend("force", settings, opts)
     end
-
+    
     if server == "lua_ls" then
       require("neodev").setup {}
     end

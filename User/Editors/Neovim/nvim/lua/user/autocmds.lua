@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
-    "netrw"
+    "netrw",
     "Jaq",
     "qf",
     "git",

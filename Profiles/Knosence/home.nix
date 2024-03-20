@@ -34,9 +34,12 @@
 
   # xdg.configFile.nvim.source = ../../User/Editors/Neovim;
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [ "electron-19.1.9" "electron-25.9.0" ];
+  nixpkgs = {
+    overlays = [ inputs.neovim-nightly-overlay.overlay ];
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [ "nix-2.16.2" "electron-19.1.9" "electron-25.9.0" ];
+    };
   };
 
   home.packages = with pkgs; [
@@ -62,6 +65,7 @@
     emacs
     sxiv
     mpv
+    neovide
 
     # Development Pkgs
     nodePackages_latest.jshint
@@ -71,8 +75,6 @@
     yamllint
     nodePackages_latest.csslint
 
-    # Neovim Pkgs 
-    
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -92,8 +94,14 @@
   programs = {
     home-manager.enable = true;
     zsh.enable = true;
-    vscode.enable = true;
+    vscode.enable = true;  
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      package = pkgs.neovim-nightly;
+    };
   };
+  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

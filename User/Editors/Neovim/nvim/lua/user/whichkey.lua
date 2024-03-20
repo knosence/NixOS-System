@@ -5,18 +5,20 @@ local M = {
 function M.config()
   local mappings = {
     q = { "<cmd>confirm q<CR>", "Quit" },
-    h = { "<cmd>nohlsearch<CR>", "NOHL" },
+    n = { "<cmd>nohlsearch<CR>", "NOHL" },
     [";"] = { "<cmd>tabnew | terminal<CR>", "Term" },
     v = { "<cmd>vsplit<CR>", "Split" },
+    h = { name = "[H]elp" },
     b = { name = "Buffers" },
     d = { name = "Debug" },
-    f = { name = "Find" },
+    f = { name = "[F]ind" },
     g = { name = "Git" },
-    l = { name = "LSP" },
+    l = { name = "[L]SP" },
     p = { name = "Plugins" },
     t = { name = "Test" },
-    a = {
-      name = "Tab",
+    a = {name = "Cellular [A]utomaton"},
+    o = {
+      name = "[O]pen",
       n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
       N = { "<cmd>tabnew %<cr>", "New Tab" },
       o = { "<cmd>tabonly<cr>", "Only" },

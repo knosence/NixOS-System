@@ -6,6 +6,7 @@ local M = {
     "vim-test/vim-test",
     "nvim-neotest/neotest-vim-test",
     -- language specific tests
+    "nvim-neotest/nvim-nio",
     "marilari88/neotest-vitest",
     "nvim-neotest/neotest-python",
     "nvim-neotest/neotest-plenary",

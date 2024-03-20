@@ -15,7 +15,7 @@ function M.config()
     hijack_netrw = false,
     sync_root_with_cwd = true,
     view = {
-      relativenumber = true,
+      relativenumber = false,
     },
     renderer = {
       add_trailing = false,
@@ -24,10 +24,10 @@ function M.config()
       full_name = false,
       highlight_opened_files = "none",
       root_folder_label = ":t",
-      indent_width = 2,
+      indent_width = 1,
       indent_markers = {
         enable = false,
-        inline_arrows = true,
+        inline_arrows = false,
         icons = {
           corner = "└",
           edge = "│",

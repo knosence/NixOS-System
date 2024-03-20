@@ -1,1 +1,0 @@
-/home/knosence/.config/emacs/elpaca/repos/org-modern/org-modern.el
