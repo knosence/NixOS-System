@@ -4,7 +4,7 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home = {
-    username = "knosence";
+        username = "knosence";
     homeDirectory = "/home/knosence";
   };
 
@@ -95,11 +95,6 @@
     home-manager.enable = true;
     zsh.enable = true;
     vscode.enable = true;  
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      package = pkgs.neovim-nightly;
-    };
   };
   
 

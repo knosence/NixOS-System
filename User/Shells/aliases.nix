@@ -16,8 +16,8 @@
   home = "home-manager switch";
   gc = "nix-collect-garbage --delete-older-than 5d";
   ## Flakes
-  "home." = "cd ~/.system && home-manager switch --flake .";
-  "sys." = "cd ~/.system && sudo nixos-rebuild switch --flake .";
+  "home." = "cd ~/.system && git add . && home-manager switch --flake .";
+  "sys." = "cd ~/.system && git add . && sudo nixos-rebuild switch --flake .";
   update = "cd ~/.system && nix flake update";
 
   # Projects

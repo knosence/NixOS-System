@@ -1,0 +1,8 @@
+{
+    "diagnostics.globals": [
+        "buffers",
+        "extensions",
+        "vim",
+        "info"
+    ]
+}
