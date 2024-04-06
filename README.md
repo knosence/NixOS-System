@@ -2,9 +2,9 @@
 
 Plans are being made to make the config files more modular and useful for multiple profiles.
 
-So far only my name is in there in ~/Profiles/Knosence/*
+So far only my name is in there in ~/Profiles/Knosence/\*
 
-## Editor ~/User/Editors/Nixvim/*
+## Editor ~/User/Editors/Nixvim/\*
 
 First and foremost: The most important tool in my arsenal: The Editor: Neovim,
 
@@ -24,7 +24,7 @@ Neovim's Features:
 10. lint
 11. lsp
 
-| pos  | Language server |
+| pos | Language server |
 | --- | --------------- |
 | a.  | bashls          |
 | b.  | clangd          |
@@ -56,7 +56,7 @@ Neovim's Features:
 22. treesitter
 23. vimPlugins
 
-| pos  | Vim Plugin       |
+| pos | Vim Plugin        |
 | --- | ----------------- |
 | a.  | Ionide-vim        |
 | b.  | vim-astro         |
@@ -69,12 +69,32 @@ Neovim's Features:
 
 Everything is wired into default.nix file
 
-## Shell ~/User/Shells/* zsh | aliases
+## Shell ~/User/Shells/\* zsh | aliases
 
 Uses Zsh with aliases.
 
-## App Configs ~/User/App/*
+## App Configs ~/User/App/\*
 
 1. Cura (appimage)
 2. git
 3. kitty
+
+## Ollama
+
+Before using ollama, you will need to serve it first.
+
+> $ sudo systemctl enable ollama
+> $ sudo systemctl start ollama
+
+or
+
+Open 2 terms:
+
+1. to run ollama serve
+2. to use ollama run WhatEverModel
+   ex.
+   ollama run deepseek-coder
+   ollama run codellama
+   ollama run dolphin-mistral
+   ollama run llama2-uncensored
+   ollama run wizardcoder

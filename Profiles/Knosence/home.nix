@@ -4,7 +4,7 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home = {
-        username = "knosence";
+    username = "knosence";
     homeDirectory = "/home/knosence";
   };
 
@@ -38,7 +38,8 @@
     overlays = [ inputs.neovim-nightly-overlay.overlay ];
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [ "nix-2.16.2" "electron-19.1.9" "electron-25.9.0" ];
+      permittedInsecurePackages =
+        [ "nix-2.16.2" "electron-19.1.9" "electron-25.9.0" ];
     };
   };
 
@@ -66,6 +67,7 @@
     sxiv
     mpv
     neovide
+    (ollama.override { acceleration = "rocm"; })
 
     # Development Pkgs
     nodePackages_latest.jshint
@@ -74,7 +76,6 @@
     yamlfmt
     yamllint
     nodePackages_latest.csslint
-
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -94,9 +95,8 @@
   programs = {
     home-manager.enable = true;
     zsh.enable = true;
-    vscode.enable = true;  
+    vscode.enable = true;
   };
-  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

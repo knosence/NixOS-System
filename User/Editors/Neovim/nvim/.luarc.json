@@ -1,8 +1,8 @@
 {
-    "diagnostics.globals": [
-        "buffers",
-        "extensions",
-        "vim",
-        "info"
-    ]
+  "runtime.version": "LuaJIT",
+  "runtime.path": ["lua/?.lua", "lua/?/init.lua"],
+  "diagnostics.globals": ["vim"],
+  "workspace.checkThirdParty": false,
+  "workspace.library": ["$VIMRUNTIME", "./lua"]
 }
+

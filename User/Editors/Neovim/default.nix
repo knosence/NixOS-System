@@ -33,6 +33,7 @@ in {
       prettierd
       nodePackages_latest.prettier
       nixfmt
+      emmet-ls
     ] ++ (linuxPackages);
 
   programs.neovim = {
