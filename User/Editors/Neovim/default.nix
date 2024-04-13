@@ -2,19 +2,27 @@
 let
 
   linuxPackages = with pkgs; [ neovide ];
-
-in {
-  home.packages = with pkgs;
+in
+{
+  home.packages =
+    with pkgs;
     [
+      nodePackages_latest.typescript-language-server
+      nodePackages_latest.nodejs
+      nodePackages."@prisma/language-server"
+      nodePackages_latest.vercel
+      nodePackages_latest.prisma
+      nodePackages_latest.eslint
+      nodePackages_latest.prettier
+
       neovim-nightly
       neovim-remote
-      nodePackages_latest.prisma
       vscode-extensions.prisma.prisma
       prisma-engines
       nil
       taplo
       yamlfmt
-      nixfmt
+      # nixfmt-rfc-style
       neovide
       luajitPackages.luarocks-nix
       lua-language-server
@@ -23,24 +31,25 @@ in {
       gcc
       tailwindcss-language-server
       nixd
-      nodePackages_latest.typescript-language-server
-      nodePackages_latest.nodejs
-      nodePackages."@prisma/language-server"
       eslint_d
       vscode-langservers-extracted
-      nodePackages_latest.eslint
       tree-sitter
       prettierd
-      nodePackages_latest.prettier
-      nixfmt
+      nixfmt-rfc-style
       emmet-ls
-    ] ++ (linuxPackages);
+
+      turso-cli
+    ]
+    ++ (linuxPackages);
 
   programs.neovim = {
     defaultEditor = true;
     withPython3 = true;
     package = pkgs.neovim-nightly;
-    plugins = with pkgs.vimPlugins; [ nvim-treesitter.withAllGrammars ];
+    plugins = with pkgs.vimPlugins; [
+      vim-nix
+      nvim-treesitter.withAllGrammars
+    ];
   };
 
   home.file."./.config/nvim/" = {

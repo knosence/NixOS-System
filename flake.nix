@@ -42,12 +42,21 @@
     # }
   };
 
-  outputs = { self, nixpkgs, home-manager, flake-utils, nixCats, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      flake-utils,
+      nixCats,
+      ...
+    }@inputs:
     let
       inherit (nixpkgs) lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
@@ -59,10 +68,10 @@
         knosence = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./Profiles/Knosence/home.nix ];
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit inputs;
+          };
         };
       };
-
     };
-
 }

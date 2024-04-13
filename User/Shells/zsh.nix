@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     # initExtra = ''
     #   export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
     # '';
@@ -61,7 +62,6 @@
       EDITOR = "vim";
       VISUAL = EDITOR;
       GIT_EDITOR = EDITOR;
-
     };
 
     oh-my-zsh = {
@@ -93,8 +93,6 @@
     zsh
     wl-clipboard
     openssl
-    nodePackages_latest.prisma
-    prisma-engines
     btop
   ];
 }

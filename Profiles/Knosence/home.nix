@@ -1,4 +1,10 @@
-{ config, pkgs, nixpkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  nixpkgs,
+  inputs,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -24,10 +30,11 @@
     # ./../../User/Editors/Nixvim
     ./../../User/Editors/Neovim
     ./../../User/Shells/zsh.nix
-
   ];
 
-  services.emacs = { enable = true; };
+  services.emacs = {
+    enable = true;
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -38,8 +45,7 @@
     overlays = [ inputs.neovim-nightly-overlay.overlay ];
     config = {
       allowUnfree = true;
-      permittedInsecurePackages =
-        [ "nix-2.16.2" "electron-19.1.9" "electron-25.9.0" ];
+      permittedInsecurePackages = [ "nix-2.16.2" ];
     };
   };
 
@@ -47,7 +53,8 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     brave
-    obsidian
+    # obsidian
+    # electron_28
     nerdfonts
     kitty
     onlyoffice-bin
@@ -58,7 +65,6 @@
     blender
     bottom
     yazi
-    etcher
     vlc
     plasma-applet-caffeine-plus
     caffeine-ng
@@ -66,7 +72,7 @@
     emacs
     sxiv
     mpv
-    neovide
+    # neovide
     (ollama.override { acceleration = "rocm"; })
 
     # Development Pkgs
@@ -130,7 +136,5 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-
   };
-
 }
