@@ -7,11 +7,6 @@
     # initExtra = ''
     #   export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
     # '';
-    history = {
-      path = ".local/share/zsh/.zsh_history";
-      size = 50000;
-      save = 50000;
-    };
     shellAliases = import ./aliases.nix;
 
     plugins = [
@@ -88,11 +83,19 @@
     tree
     lf
     xclip
+    ffmpegthumbnailer
+    bun
+    poppler # for PDF preview
+    unar
+    zoxide # for historical directories navigation
+    jq # for Json preview
     cmake
     libtool
     zsh
     wl-clipboard
     openssl
     btop
+    zoxide
+    starship
   ];
 }

@@ -4,14 +4,14 @@
   la = "colorls -a";
   ".." = "cd .. && ls";
   "f" = "fzf --print0 | xargs -0 -o vim";
-
+"yazi"="yazi -- --local-events";
   # Flakes commands for quicker access
   nix-prisma = "cp ~/.system/User/flakes/prisma.nix flake.nix";
   run-flake = "nix develop";
+  pu = "cd ~/Projects/unity-market-admin";
 
   # shorten system update, upgrades, and garbage collection
-  sgc =
-    "sudo nixos-rebuild switch && home-manager switch && nix-collect-garbage --delete-older-than 5d";
+  sgc = "sudo nixos-rebuild switch && home-manager switch && nix-collect-garbage --delete-older-than 5d";
   sys = "sudo nixos-rebuild switch";
   home = "home-manager switch";
   gc = "nix-collect-garbage --delete-older-than 5d";
@@ -21,7 +21,6 @@
   update = "cd ~/.system && nix flake update";
 
   # Projects
-  pu = "cd ~/Projects/unity-market-admin && code.";
+  run-pu = "cd ~/Projects/unity-market-admin && code.";
   "code." = "zellij --layout ~/.config/zellij/Layouts/default.kdl";
-
 }

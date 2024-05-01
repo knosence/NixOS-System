@@ -1,6 +1,6 @@
 return {
   defaults = { lazy = true },
-  install = { colorscheme = { "nvchad" } },
+  install = { colorscheme = { "catppuccin" } },
 
   ui = {
     icons = {
@@ -14,6 +14,8 @@ return {
   performance = {
     rtp = {
       disabled_plugins = {
+        "mason",
+        "mason-lspconfig",
         "2html_plugin",
         "tohtml",
         "getscript",

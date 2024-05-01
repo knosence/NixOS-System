@@ -29,6 +29,7 @@
     ./../../User/App/kitty/kitty.nix
     # ./../../User/Editors/Nixvim
     ./../../User/Editors/Neovim
+    ./../../User/App/yazi
     ./../../User/Shells/zsh.nix
   ];
 
@@ -53,6 +54,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     brave
+    telegram-desktop
     # obsidian
     # electron_28
     nerdfonts
@@ -64,7 +66,6 @@
     discord
     blender
     bottom
-    yazi
     vlc
     plasma-applet-caffeine-plus
     caffeine-ng
@@ -73,9 +74,13 @@
     sxiv
     mpv
     # neovide
-    (ollama.override { acceleration = "rocm"; })
+    # https://github.com/ollama/ollama/blob/main/docs/linux.md
+    # (ollama.override { acceleration = "rocm"; })
 
-    # Development Pkgs
+    ## CLI
+    yazi
+
+    ## Development Pkgs
     nodePackages_latest.jshint
     markdownlint-cli
     sqlint

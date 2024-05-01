@@ -2,10 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   #----==={ Imports Section }===----
 
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -60,12 +62,16 @@
 
   services = {
     blueman.enable = true;
+    displayManager = {
+      sddm.enable = true;
+    };
     xserver = {
       # Enable the X11 windowing system.
       enable = true;
       # Enable the KDE Plasma Desktop Environment.
-      displayManager = { sddm.enable = true; };
-      desktopManager = { plasma5.enable = true; };
+      desktopManager = {
+        plasma5.enable = true;
+      };
     };
   };
 
@@ -81,7 +87,10 @@
   services = {
     printing = {
       enable = true;
-      drivers = [ pkgs.epson-escpr pkgs.epson-escpr2 ];
+      drivers = [
+        pkgs.epson-escpr
+        pkgs.epson-escpr2
+      ];
     };
     avahi = {
       enable = true;
@@ -92,7 +101,9 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio = { enable = false; };
+  hardware.pulseaudio = {
+    enable = false;
+  };
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -114,7 +125,11 @@
   users.users.knosence = {
     isNormalUser = true;
     description = "NaDario M. Seays Sr";
-    extraGroups = [ "dialout" "networkmanager" "wheel" ];
+    extraGroups = [
+      "dialout"
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       firefox
       kate
@@ -170,6 +185,8 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

@@ -14,6 +14,7 @@ in
       nodePackages_latest.prisma
       nodePackages_latest.eslint
       nodePackages_latest.prettier
+      nodePackages_latest.pnpm
 
       neovim-nightly
       neovim-remote
@@ -37,6 +38,7 @@ in
       prettierd
       nixfmt-rfc-style
       emmet-ls
+      deno
 
       turso-cli
     ]
