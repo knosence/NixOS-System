@@ -89,7 +89,7 @@ return {
         require("telescope").load_extension "zoxide"
       end,
       keys = {
-        { "<leader>sz", "<CMD>Telescope zoxide list<CR>", desc = "Zoxide" },
+        { "<leader>fz", "<CMD>Telescope zoxide list<CR>", desc = "Zoxide" },
       },
     },
     {

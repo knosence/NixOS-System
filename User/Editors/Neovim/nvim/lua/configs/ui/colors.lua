@@ -8,7 +8,7 @@ return {
     require("catppuccin").setup {
       flavour = "latte",
       dim_inactive = {
-        enabled = false,
+        enabled = true,
       },
       integrations = {
         cmp = true,

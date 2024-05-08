@@ -76,9 +76,9 @@ return {
 
     local map = vim.keymap.set
     map("n", "<leader>tr", ":TroubleToggle<CR>", { desc = "Trouble - Toggle" })
-    map("n", "<leader>wd", ":TroubleToggle workspace_diagnostics<CR>", { desc = "Trouble - Workspace Diagnostics" })
+    map("n", "<leader>gd", ":TroubleToggle workspace_diagnostics<CR>", { desc = "Trouble - Workspace Diagnostics" })
     map("n", "<leader>cq", "<CMD>TroubleToggle quickfix<CR>", { desc = "Trouble - Quickfix" })
-    map("n", "<leader>td", "<CMD>TodoTrouble<CR>", { desc = "Trouble - Todo" })
+    map("n", "<leader>fd", "<CMD>TodoTrouble<CR>", { desc = "Trouble - Todo" })
     map("n", "gd", "<CMD>Trouble lsp_definitions<CR>", { desc = "Trouble - Definition" })
     map("n", "gi", "<CMD>Trouble lsp_implementations<CR>", { desc = "Trouble - Implementations" })
     map("n", "gD", "<CMD>Trouble lsp_type_definitions<CR>", { desc = "Trouble - Type Definition" })

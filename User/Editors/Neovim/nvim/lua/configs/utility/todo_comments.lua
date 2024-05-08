@@ -25,7 +25,7 @@ return {
       desc = "Todo Comments Prev",
     },
 
-    { "<leader>fd", "<cmd>TodoTelescope<cr>", { desc = "Todo Comments - Search" } },
+    { "<leader>fd", "<cmd>TodoTelescope<cr>", desc = "Todo Comments - Search" },
     {
       "<leader>ct",
       function()
@@ -42,8 +42,6 @@ return {
       mode = "n",
       desc = "Todo Comments Prev -> [t",
     },
-
-    { "<leader>sd", "<cmd>TodoTelescope<cr>", { desc = "Todo Comments - Search" } },
   },
   opts = {
     signs = true, -- show icons in the signs column

@@ -15,6 +15,7 @@ return {
         fish = { "fish_indent" },
         cpp = { "clang_format" },
         c = { "clang_format" },
+        nix = { "nixfmt" },
         vue = { { "prettierd", "prettier" } },
         ["_"] = { "trim_whitespace" },
       },

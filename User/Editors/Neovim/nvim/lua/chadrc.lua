@@ -117,13 +117,18 @@ M.ui = {
         "SessionManager load_session",
       },
       {
+        "  Projects",
+        "Spc f p",
+        ":lua require'telescope'.extensions.projects.projects{}",
+      },
+      {
         "  Zoxide",
         "Spc z x",
         ":lua require('telescope').extensions.zoxide.list()",
       },
       {
         "  Find File",
-        "Spc f",
+        "Spc f f",
         "Telescope find_files",
       },
       {

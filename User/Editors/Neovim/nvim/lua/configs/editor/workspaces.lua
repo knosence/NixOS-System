@@ -52,6 +52,6 @@ return {
     telescope.load_extension "workspaces"
   end,
   keys = {
-    { "<leader>wk", "<CMD>Telescope workspaces<CR>", mode = { "n" }, desc = "Workspaces - List" },
+    { "<leader>fk", "<CMD>Telescope workspaces<CR>", mode = { "n" }, desc = "Workspaces - List" },
   },
 }

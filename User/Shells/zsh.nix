@@ -1,3 +1,5 @@
+# yt-dlp -o "%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLK5U0tyd34tBYZ1L6rplNfFNNQPwgCRR0"
+
 { pkgs, ... }:
 {
   programs.zsh = {
@@ -76,11 +78,13 @@
     ripgrep
     fd
     fzf
+    gh
     unzip
     htop
     zellij
     lazygit
     tree
+    yt-dlp
     lf
     xclip
     ffmpegthumbnailer

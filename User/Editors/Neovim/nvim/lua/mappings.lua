@@ -9,6 +9,7 @@ nomap("t", "<A-v>")
 
 nomap("n", "<leader>lf")
 nomap("n", "<leader>q")
+-- nomap("n", "<leader>rh")
 nomap("n", "<A-h>")
 nomap("n", "<A-v>")
 nomap("n", "<leader>h")
@@ -93,6 +94,7 @@ end, { desc = "Dashboard" })
 
 -- ── Lazy ──────────────────────────────────────────────────────
 map("n", "<leader>pl", ":Lazy<CR>", { desc = "Lazy - Open Plugin Manager" })
+map("n", "<leader>pc", ":LspInfo<CR>", { desc = "LspInfo - Open Lsp Buffer Info" })
 
 -- ── mason ─────────────────────────────────────────────────────
 map("n", "<leader>om", ":Mason<CR>", { desc = "Mason" })
@@ -199,3 +201,42 @@ map("n", "<leader>fwk", "<cmd>WhichKey <CR>", { desc = "Whichkey - all keymaps" 
 map("n", "<leader>fwl", function()
   vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
 end, { desc = "Whichkey - query lookup" })
+
+-- ── Refactoring ────────────────────────────────────────────────────
+
+map("x", "<leader>re", ":Refactor extract ", { desc = "Refactor extract this" })
+map("x", "<leader>rf", ":Refactor extract_to_file ", { desc = "Refactor Extract To File" })
+
+map("x", "<leader>rv", ":Refactor extract_var ", { desc = "Refactor Extract Variable" })
+
+map({ "n", "x" }, "<leader>ri", ":Refactor inline_var", { desc = "Refactor Inline Variable" })
+
+map("n", "<leader>rI", ":Refactor inline_func", { desc = "Refactor Inline Function" })
+
+map("n", "<leader>rb", ":Refactor extract_block", { desc = "Refactor Extract Block" })
+map("n", "<leader>rbf", ":Refactor extract_block_to_file", { desc = "Refactor Extract Block To File" })
+-- load refactoring Telescope extension
+require("telescope").load_extension "refactoring"
+
+vim.keymap.set({ "n", "x" }, "<leader>rr", function()
+  require("telescope").extensions.refactoring.refactors()
+end, { desc = "Telescope Refactor" })
+-- You can also use below = true here to to change the position of the printf
+-- statement (or set two remaps for either one). This remap must be made in normal mode.
+vim.keymap.set("n", "<leader>rp", function()
+  require("refactoring").debug.printf { below = false }
+end, { desc = "Refactor Debug Printf" })
+
+-- Print var
+
+vim.keymap.set({ "x", "n" }, "<leader>rv", function()
+  require("refactoring").debug.print_var()
+end, { desc = "Refactor Debug Print Variable" })
+-- Supports both visual and normal mode
+
+vim.keymap.set("n", "<leader>rc", function()
+  require("refactoring").debug.cleanup {}
+end, { desc = "Refactor Debug Cleanup" })
+-- Supports only normal mode
+
+map({ "n" }, "<leader>fn", "<cmd>Nerdy<CR>", { desc = "Nerdy - Search Nerd Icons" })

@@ -117,6 +117,10 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true; # virt-manager requires dconf to remember settings
+
+  services.qemuGuest.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -129,6 +133,7 @@
       "dialout"
       "networkmanager"
       "wheel"
+      "libvirtd"
     ];
     packages = with pkgs; [
       firefox
@@ -153,6 +158,8 @@
     gnumake
     epson-escpr
     epson-escpr2
+    virt-manager-qt
+    virt-manager
 
     # Appimage
     (callPackage ./../../User/App/Cura { })
