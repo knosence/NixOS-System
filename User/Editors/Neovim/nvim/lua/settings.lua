@@ -19,6 +19,7 @@ M.lang = {
   html = true,
   css = true,
   vue = true,
+  tailwindcss = true,
 }
 
 M.editor = {

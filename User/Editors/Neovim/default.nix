@@ -8,6 +8,7 @@ in
     with pkgs;
     [
       nodePackages_latest.typescript-language-server
+      nodePackages_latest.bash-language-server
       nodePackages_latest.nodejs
       nodePackages."@prisma/language-server"
       nodePackages_latest.vercel
@@ -51,6 +52,7 @@ in
     plugins = with pkgs.vimPlugins; [
       vim-nix
       nvim-treesitter.withAllGrammars
+      mason-nvim
     ];
   };
 

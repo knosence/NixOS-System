@@ -27,7 +27,6 @@
     # inputs.nixvim.homeManagerModules.nixvim
 
     ./../../User/App/kitty/kitty.nix
-    # ./../../User/Editors/Nixvim
     ./../../User/Editors/Neovim
     ./../../User/App/yazi
     ./../../User/Shells/zsh.nix
@@ -55,7 +54,7 @@
     # # "Hello, world!" when run.
     brave
     telegram-desktop
-    # obsidian
+    obsidian
     # electron_28
     nerdfonts
     kitty

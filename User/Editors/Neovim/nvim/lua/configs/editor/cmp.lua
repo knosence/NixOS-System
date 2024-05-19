@@ -61,6 +61,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "ray-x/lsp_signature.nvim", -- lsp signature help when typing
@@ -69,6 +70,27 @@ return {
     "hrsh7th/cmp-nvim-lsp-document-symbol",
   },
   opts = {
+    -- `:` cmdline setup.
+    require("cmp").setup.cmdline(":", {
+      mapping = require("cmp").mapping.preset.cmdline(),
+      sources = require("cmp").config.sources({
+        { name = "path" },
+      }, {
+        {
+          name = "cmdline",
+          option = {
+            ignore_cmds = { "Man", "!" },
+          },
+        },
+      }),
+    }),
+    -- `/` cmdline setup.
+    require("cmp").setup.cmdline("/", {
+      mapping = require("cmp").mapping.preset.cmdline(),
+      sources = {
+        { name = "buffer" },
+      },
+    }),
     mapping = {
       ["<Tab>"] = require("cmp").mapping(function(fallback)
         fallback()

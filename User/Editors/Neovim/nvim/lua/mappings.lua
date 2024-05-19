@@ -190,10 +190,9 @@ map(
   { desc = "Comment - Toggle" }
 )
 
-map("t", "<ESC>", function()
-  local win = vim.api.nvim_get_current_win()
-  vim.api.nvim_win_close(win, true)
-end, { desc = "Terminal - Close term in terminal mode" })
+map("n", "<leader>tt", "<cmd>term<cr>", { desc = "Terminal" })
+
+map("n", "<ESC><ESC>", "<cmd>nohlsearch<cr>", { desc = "No Highlighted Search" })
 
 -- whichkey
 map("n", "<leader>fwk", "<cmd>WhichKey <CR>", { desc = "Whichkey - all keymaps" })
@@ -240,3 +239,7 @@ end, { desc = "Refactor Debug Cleanup" })
 -- Supports only normal mode
 
 map({ "n" }, "<leader>fn", "<cmd>Nerdy<CR>", { desc = "Nerdy - Search Nerd Icons" })
+
+map("n", "<leader>To", function()
+  vim.lsp.inlay_hints.enable(not vim.lsp.inlay_hints.is_enabled())
+end, { desc = "Toggle Inlay Hints" })

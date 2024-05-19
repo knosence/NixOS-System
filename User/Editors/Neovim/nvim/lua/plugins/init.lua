@@ -39,6 +39,7 @@ return {
   -- UI
   { import = "configs.ui.dressing", enabled = true },
   { import = "configs.ui.bqf", enabled = true },
+  { import = "configs.ui.colors", enabled = true },
   { import = "configs.ui.illuminate", enabled = s.ui.illuminate },
   { import = "configs.ui.neoscroll", enabled = s.ui.smooth_scroll },
   { import = "configs.ui.noice", enabled = s.ui.noice },

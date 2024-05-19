@@ -97,9 +97,15 @@
     libtool
     zsh
     wl-clipboard
+
+    mkcert
+    nss_latest
+
     openssl
     btop
     zoxide
     starship
+    zinit
+    ollama
   ];
 }

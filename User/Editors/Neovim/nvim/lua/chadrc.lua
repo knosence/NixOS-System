@@ -175,8 +175,8 @@ M.ui = {
   },
 
   hl_override = {
-    CursorColumn = { bg = "#242424" },
-    CursorLine = { bg = "#242424" },
+    CursorColumn = { bg = "#404040" },
+    CursorLine = { bg = "#404040" },
     Visual = { bg = "#6e738d" },
     FoldColumn = { fg = "grey", bg = "black" },
     Folded = {
